@@ -1,73 +1,126 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class player_controller : MonoBehaviour
 {
-    public Transform cam;
-    public float gravity = -9.8f;
-    public KeyCode run_key = KeyCode.LeftShift;
-    public float speed = 10.0f, walk_speed = 10.0f, run_speed = 12.0f, climb_speed = 4.0f;
-    public float turn_smooth_time = 0.1f;
+    // Possible actions by player that arent instant(moving would be instant)
+    enum InstantActions {ATTACK, DASH }
+    Queue<InstantActions> actions;
+    InstantActions currentAction;
+    float time_clear_action_queue = 0.5f, current_time_clear_Action_queue;
+    // We cannot perform any action, instant or not, while we are performing an action
+    bool performingInstantAction = false;
 
-    enum STATE { WALKING, RUNNING, CLIMBING, FALLING };
-    STATE current_state = STATE.WALKING;
+    [SerializeField] private KeyCode dash_key = KeyCode.LeftShift;
+    [SerializeField] private KeyCode attack_key = KeyCode.Mouse0;
+
+    public float gravity = -9.8f;
+    [SerializeField] private float speed = 10.0f, dash_time = 0.1f, dash_speed = 0.2f;
+    public GameObject playerMesh;
     
     CharacterController character_controller;
-    float turn_smooth_velocity;
 
 
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         character_controller = GetComponent<CharacterController>();
+
+        actions = new Queue<InstantActions>();
     }
 
     void Update()
     {
-        character_controller.Move(new Vector3(0f,gravity,0f) * Time.deltaTime);
+        // Apply gravity
+        character_controller.Move(new Vector3(0f, gravity, 0f) * Time.deltaTime);
 
-        Vector3 direction = Vector3.zero;
+        // Check for instant actions, add to actions queue
+        if (Input.GetKeyDown(dash_key))
+            actions.Enqueue(InstantActions.DASH);
+        if(Input.GetKeyDown(attack_key))
+            actions.Enqueue(InstantActions.ATTACK);
 
-        if (current_state == STATE.WALKING)
-            direction = walking_state();
-        else if (current_state == STATE.CLIMBING)
-            direction = climbing_state();
-
-        if (direction.magnitude >= 0.1f)
+        // If available, get next action to perform
+        if (!performingInstantAction && actions.Count != 0)
         {
-            float target_angle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
-            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, target_angle, ref turn_smooth_velocity, turn_smooth_time);
-            transform.rotation = Quaternion.Euler(0f, angle, 0f);
+            //string s = "";
+            //foreach (var action in actions)
+            //    s += action + " - ";
 
-            Vector3 move_direction = Quaternion.Euler(0f, target_angle, 0f) * Vector3.forward;
+            //Debug.Log(s);
 
-            character_controller.Move(move_direction.normalized * speed * Time.deltaTime);
+            currentAction = actions.Dequeue();
+            performingInstantAction = true;
+
+            if (currentAction == InstantActions.DASH)
+                StartCoroutine(DashCoroutine());
+            else if(currentAction == InstantActions.ATTACK)
+                StartCoroutine(AttackCoroutine());
         }
-    }
 
-    Vector3 walking_state()
-    {
-        SetSpeed();
-
-        // Move the player
-        return new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical")).normalized;
-    }
-    Vector3 climbing_state()
-    {
-        speed = climb_speed;
-        return new Vector3(0f, Input.GetAxis("Vertical"), 0f).normalized;
-    }
-    void SetSpeed()
-    {
-        if (Input.GetKey(run_key))
+        // Reset timer
+        if(actions.Count == 0)
         {
-            speed = run_speed;
+            current_time_clear_Action_queue = time_clear_action_queue;
         }
         else
         {
-            speed = walk_speed;
+            current_time_clear_Action_queue -= Time.deltaTime;
+
+            if(current_time_clear_Action_queue <= .0f)
+                actions.Clear();
         }
+
+        // Move player
+        if(!performingInstantAction)
+            move();
+    }
+
+    private void move()
+    {
+        Vector3 direction = Vector3.zero;
+
+        direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).normalized;
+
+        if (direction.magnitude >= 0.1f)
+        {
+            character_controller.Move(direction * speed * Time.deltaTime);
+
+            if (direction != Vector3.zero)
+            {
+                playerMesh.transform.forward = direction;
+            }
+        }
+    }
+
+    private IEnumerator DashCoroutine()
+    {
+        Debug.Log("DASH");
+        float startTime = Time.time;
+        
+        while (Time.time < startTime + dash_time)
+        {
+            transform.Translate(playerMesh.transform.forward * dash_speed * Time.deltaTime);
+            yield return null; // this will make Unity stop here and continue next frame
+        }
+        Debug.Log("END DASH");
+        performingInstantAction = false;
+    }
+
+    private IEnumerator AttackCoroutine()
+    {
+        Debug.Log("ATTACK");
+        float startTime = Time.time;
+
+        while (Time.time < startTime + dash_time)
+        {
+            transform.Translate(playerMesh.transform.forward * dash_speed * Time.deltaTime);
+            yield return null; // this will make Unity stop here and continue next frame
+        }
+        Debug.Log("END ATTACK");
+        performingInstantAction = false;
     }
 }
