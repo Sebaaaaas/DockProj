@@ -7,7 +7,7 @@ public class scroll_texture : MonoBehaviour
 {
     public float scroll_speed_x = 0.5F;
     public float scroll_speed_y = 0.5F;
-    public float side_to_side_time = 3.0F;
+    public float side_to_side_time = 1.5F;
     float timer = 0F;
     bool forward = false;
     private Vector2 currentOffset;
@@ -30,7 +30,7 @@ public class scroll_texture : MonoBehaviour
         }
 
         // Aceleramos cuando estamos en medio del movimiento, y movemos en funcion de forwards
-        float delta = Time.deltaTime * scroll_speed_x * (forward ? 1 : -1);
+        float delta = Time.deltaTime * scroll_speed_x * 0.3f * (forward ? 1 : -1);
         currentOffset.x += delta * (side_to_side_time / 2 - timer);       
         currentOffset.y += delta * (side_to_side_time / 2 - timer); 
 

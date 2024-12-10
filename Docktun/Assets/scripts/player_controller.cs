@@ -37,13 +37,7 @@ public class player_controller : MonoBehaviour
 
     void Update()
     {
-        for (int i = 0; i <= 19; i++) // Check up to 20 buttons
-        {
-            if (Input.GetKeyDown((KeyCode)(KeyCode.Joystick1Button0 + i)))
-            {
-                Debug.Log("Button " + i + " pressed");
-            }
-        }
+
         // Apply gravity
         character_controller.Move(new Vector3(0f, gravity, 0f) * Time.deltaTime);
 
@@ -113,7 +107,7 @@ public class player_controller : MonoBehaviour
 
     private IEnumerator DashCoroutine()
     {
-        Debug.Log("DASH");
+        //Debug.Log("DASH");
         float startTime = Time.time;
         
         while (Time.time < startTime + dash_time)
@@ -121,13 +115,13 @@ public class player_controller : MonoBehaviour
             transform.Translate(playerMesh.transform.forward * dash_speed * Time.deltaTime);
             yield return null;
         }
-        Debug.Log("END DASH");
+        //Debug.Log("END DASH");
         performingInstantAction = false;
     }
 
     private IEnumerator AttackCoroutine()
     {
-        Debug.Log("ATTACK");
+        //Debug.Log("ATTACK");
         float startTime = Time.time;
         
         playerSword.SetActive(true);
@@ -137,7 +131,7 @@ public class player_controller : MonoBehaviour
             yield return null;
         }
 
-        Debug.Log("END ATTACK");
+        //Debug.Log("END ATTACK");
         playerSword.SetActive(false);
 
         performingInstantAction = false;
