@@ -4,6 +4,22 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance;
+
+    [SerializeField] int playerHealth = 3;
+
+    private void Awake()
+    {
+        if(instance == null)
+        {
+            DontDestroyOnLoad(gameObject);
+            instance = this; 
+        }
+        else if(instance != this){
+            Destroy(gameObject);
+        }
+
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +30,16 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void healPlayer(int healthRestored)
+    {
+        playerHealth += healthRestored;
+        Debug.Log(playerHealth);
+    }
+
+    void damagePlayer(int damageDealt)
+    {
+        playerHealth -= damageDealt;
     }
 }

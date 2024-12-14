@@ -27,6 +27,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 10600
+--- !u!114 &-8551519685339862765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/music
+  m_EditorClassIdentifier: 
+  Path: event:/music
+  Guid:
+    Data1: -1099861652
+    Data2: 1235045135
+    Data3: -683959907
+    Data4: -457126039
+  Banks:
+  - {fileID: 6361577115753586849}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 12000
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42,14 +69,16 @@ MonoBehaviour:
   EditorBanks:
   - {fileID: 3983046348073240930}
   - {fileID: 3816392042091350563}
+  - {fileID: 6361577115753586849}
   EditorEvents:
   - {fileID: -8607144030499172330}
+  - {fileID: -8551519685339862765}
   EditorParameters: []
   MasterBanks:
   - {fileID: 3816392042091350563}
   StringsBanks:
   - {fileID: 3983046348073240930}
-  cacheTime: 638596049371280494
+  cacheTime: 638696026549210957
   cacheVersion: 131619
 --- !u!114 &3816392042091350563
 MonoBehaviour:
@@ -66,7 +95,7 @@ MonoBehaviour:
   Path: ../DocktunFMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638596049371270423
+  lastModified: 638696026546864426
   FileSizes:
   - Name: Desktop
     Value: 318464
@@ -86,8 +115,28 @@ MonoBehaviour:
   Path: ../DocktunFMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638596049371280494
+  lastModified: 638696026546894413
   FileSizes:
   - Name: Desktop
-    Value: 762
+    Value: 870
+  Exists: 1
+--- !u!114 &6361577115753586849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/BackgroundSounds.bank
+  m_EditorClassIdentifier: 
+  Path: ../DocktunFMOD/Build/Desktop/BackgroundSounds.bank
+  Name: BackgroundSounds
+  StudioPath: bank:/BackgroundSounds
+  lastModified: 638696026549210957
+  FileSizes:
+  - Name: Desktop
+    Value: 148992
   Exists: 1

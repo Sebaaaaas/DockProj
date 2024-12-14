@@ -11,6 +11,7 @@ public class player_controller : MonoBehaviour
     Queue<InstantActions> actions;
     InstantActions currentAction;
     float time_clear_action_queue = 0.5f, current_time_clear_Action_queue;
+
     // We cannot perform any action, instant or not, while we are performing an action
     bool performingInstantAction = false;
 
@@ -19,7 +20,7 @@ public class player_controller : MonoBehaviour
 
     public float gravity = -9.8f;
 
-    [SerializeField] private float speed = 10.0f, dash_time = 0.1f, dash_speed = 0.2f, attack_time = 0.2f;
+    [SerializeField] private float speed = 10.0f, dash_time = 0.1f, dash_speed = 0.2f, dashLength = 1.3f, attack_time = 0.2f;
     public GameObject playerMesh;
     public GameObject playerSword;
     
@@ -109,13 +110,30 @@ public class player_controller : MonoBehaviour
     {
         //Debug.Log("DASH");
         float startTime = Time.time;
-        
+        Vector3 startPosition = transform.position;
+        Vector3 dashDirection = playerMesh.transform.forward;
+        Vector3 dashDestination = startPosition + dashDirection * dashLength;
+        Debug.Log(dashDestination);
+
+        RaycastHit hit;
+        if (Physics.Raycast(startPosition, dashDirection, out hit, dashLength))
+        {
+            // If we hit something, set the dash destination to the point of impact
+            dashDestination = hit.point;
+        }
+
         while (Time.time < startTime + dash_time)
         {
-            transform.Translate(playerMesh.transform.forward * dash_speed * Time.deltaTime);
+            float t = (Time.time - startTime) / dash_time;
+            transform.position = Vector3.Lerp(startPosition, dashDestination, t);
             yield return null;
         }
         //Debug.Log("END DASH");
+
+        // Ensure we reach correct destination
+       
+        transform.position = dashDestination;
+
         performingInstantAction = false;
     }
 
