@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{74b8d131-ebac-4e2e-994a-56ab8976e4f8}">
+		<property name="assetPath">
+			<value>recover_health.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.40949999999999998</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{34a59c8d-bb8f-411e-b8db-2cc5b438bf26}</destination>
+		</relationship>
+	</object>
+</objects>

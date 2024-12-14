@@ -1,12 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    [SerializeField] int playerHealth = 3;
+
+
+    [SerializeField] int playerHealth = 3, maxPlayerHealth = 3;
+
+    public Sprite emptyHeart, fullHeart;
+
+    public Image[] hearts;
 
     private void Awake()
     {
@@ -23,7 +29,9 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        // Set the hearts
+        for (int i = 0; i < playerHealth; i++)
+            hearts[i].sprite = fullHeart;
     }
 
     // Update is called once per frame
@@ -34,12 +42,26 @@ public class GameManager : MonoBehaviour
 
     public void healPlayer(int healthRestored)
     {
+        // First, set the hearts that should be full
+        for (int i = playerHealth; i < playerHealth + healthRestored && i < maxPlayerHealth; i++)
+            hearts[i].sprite = fullHeart;
+
         playerHealth += healthRestored;
-        Debug.Log(playerHealth);
+
+        if(playerHealth > maxPlayerHealth)
+               playerHealth = maxPlayerHealth;
+
     }
 
-    void damagePlayer(int damageDealt)
+    public void damagePlayer(int damageDealt)
     {
+        for (int i = playerHealth; i > playerHealth - damageDealt && i > 0; i--)
+            hearts[i - 1].sprite = emptyHeart;
+
         playerHealth -= damageDealt;
+
+        if(playerHealth < 0)
+            playerHealth = 0;
+
     }
 }
