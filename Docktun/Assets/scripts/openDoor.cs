@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class openDoor : MonoBehaviour
 {
-    public GameObject door;
+    public GameObject[] doors;
 
     void Start()
     {
@@ -15,7 +15,8 @@ public class openDoor : MonoBehaviour
     {        
         if (collision.gameObject.tag == "Sword")
         {
-            door.GetComponent<SlidingDoor>().changeDoorOpen();                  
+            for(int i = 0; i < doors.Length; i++)
+                doors[i].GetComponent<SlidingDoor>().changeDoorOpen();                  
         }
     }
 }
