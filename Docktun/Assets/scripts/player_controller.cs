@@ -26,6 +26,8 @@ public class player_controller : MonoBehaviour
     
     CharacterController character_controller;
 
+    // If player falls into water/void, we keep track of where we should reset their position
+    public Vector3 lastPosBeforeFall;
 
     void Start()
     {
@@ -85,6 +87,8 @@ public class player_controller : MonoBehaviour
             if(current_time_clear_Action_queue <= .0f)
                 actions.Clear();
         }
+
+        // Save last spot player was grounded
 
         // Move player
         if(!performingInstantAction)

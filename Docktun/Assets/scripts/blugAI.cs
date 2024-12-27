@@ -9,7 +9,7 @@ public class blugAI : MonoBehaviour
 
     public Transform player;
 
-    public float health;
+    public float health;    
 
     public LayerMask whatIsGround, whatIsPlayer;
 
@@ -28,7 +28,7 @@ public class blugAI : MonoBehaviour
 
     private void Awake()
     {
-        agent = GetComponent<NavMeshAgent>();
+        agent = GetComponent<NavMeshAgent>();        
     }
 
     private void Update()

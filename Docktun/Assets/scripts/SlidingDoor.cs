@@ -5,10 +5,14 @@ using UnityEngine;
 public class SlidingDoor : MonoBehaviour
 {
     Animator animator;
+    AnimationClip clip;
     bool open;
+
+    static string doorOpenAnimationName = "Cube|OpenDoor";
+    static string doorCloseAnimationName = "Cube|CloseDoor";
     // Guardamos los nombres de las animaciones, por eficiencia asi
-    private static readonly int DoorOpenHash = Animator.StringToHash("DoorOpen");
-    private static readonly int DoorCloseHash = Animator.StringToHash("DoorClose");
+    private static readonly int DoorOpenHash = Animator.StringToHash(doorOpenAnimationName);
+    private static readonly int DoorCloseHash = Animator.StringToHash(doorCloseAnimationName);
 
     private void Start()
     {
@@ -19,20 +23,21 @@ public class SlidingDoor : MonoBehaviour
     public void changeDoorOpen()
     {
         // Evitamos que abra/cierre mientras ya esta en proceso de abrir/cerrar
-        if (IsAnimationPlaying("DoorOpen") || IsAnimationPlaying("DoorClose"))
+        if (IsAnimationPlaying(doorOpenAnimationName) || IsAnimationPlaying(doorCloseAnimationName))
         {
-            Debug.Log("Cannot open door, animation already playing.");
+            Debug.Log("Cannot move door, animation already playing.");
             return;
         }
 
         if (open)
-        {            
-            animator.Play("DoorClose");
+        {
+            Debug.Log("close");
+            animator.Play(DoorCloseHash);
             StartCoroutine(WaitForAnimation(DoorCloseHash, () => open = false));
         }
         else
         {
-            animator.Play("DoorOpen");
+            animator.Play(DoorOpenHash);
             StartCoroutine(WaitForAnimation(DoorOpenHash, () => open = true));
         }
     }
