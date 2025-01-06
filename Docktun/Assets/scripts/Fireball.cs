@@ -33,5 +33,22 @@ public class Fireball : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         gameObject.SetActive(false);
+        Debug.Log("Hit");
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("PlayerHit");
+            GameManager.instance.damagePlayer(1);
+        }
     }
+
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    gameObject.SetActive(false);
+    //    Debug.Log("Hit");
+    //    if (collision.gameObject.CompareTag("Player"))
+    //    {
+    //        Debug.Log("PlayerHit");
+    //        GameManager.instance.damagePlayer(1);
+    //    }
+    //}
 }

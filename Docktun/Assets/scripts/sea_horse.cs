@@ -21,9 +21,7 @@ public class sea_horse : MonoBehaviour
     void Start()
     {
         startPos = transform.position;
-        startPos.y += 2.0f;
-
-        StartCoroutine(ShootFireballCoroutine());
+        startPos.y += 3.0f;
     }
 
     // Update is called once per frame
@@ -33,27 +31,25 @@ public class sea_horse : MonoBehaviour
 
         Vector3 direction = transform.forward;
 
+        // Check if player seen, if so set emitting fire to true and start a timer
         if (Physics.Raycast(startPos, direction, out RaycastHit hit, rayDistance))
         {
-            if (hit.collider.CompareTag("Player"))
+            if (hit.collider.CompareTag("Player") && !emitFire)
             {
                 emitFire = true;
                 timer = timeEmittingFire;
+                StartCoroutine(ShootFireballCoroutine());
             }
         }
 
 
         if (emitFire)
         {
-            //if(!fire.isEmitting)
-            //    fire.Play();
-
-            //timer -= Time.deltaTime;
-            //if (timer <= 0)
-            //{
-            //    emitFire = false;
-            //    fire.Stop();
-            //}
+            timer -= Time.deltaTime;
+            if (timer <= 0)
+            {
+                emitFire = false;
+            }
         }
 
         Debug.DrawRay(startPos, direction * rayDistance, Color.red);
@@ -64,14 +60,14 @@ public class sea_horse : MonoBehaviour
         GameObject fireball = fireballPool.GetPooledObject();
         fireball.transform.position = fireballSpawner.transform.position;
         fireball.transform.rotation = transform.rotation;
-        fireball.GetComponent<Fireball>().startLifeTimer(); // Para eliminarlo cuando pase el tiempo de vida
+        fireball.GetComponent<Fireball>().startLifeTimer(); // Delete when lifetime is over
 
         fireball.SetActive(true);
     }
 
     IEnumerator ShootFireballCoroutine()
     {
-        while (true) // Always looping
+        while (emitFire)
         {
             yield return new WaitForSeconds(shootFireballInterval); // Return if time hasnt passed
 
