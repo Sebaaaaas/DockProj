@@ -12,11 +12,23 @@ public class openDoor : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision collision)
-    {        
+    {
+        Debug.Log(collision.gameObject.name);
         if (collision.gameObject.tag == "Sword")
         {
+            Debug.Log("ChangeDoors");
             for(int i = 0; i < doors.Length; i++)
                 doors[i].GetComponent<SlidingDoor>().changeDoorOpen();                  
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Sword")
+        {
+            Debug.Log("ChangeDoors");
+            for (int i = 0; i < doors.Length; i++)
+                doors[i].GetComponent<SlidingDoor>().changeDoorOpen();
         }
     }
 }

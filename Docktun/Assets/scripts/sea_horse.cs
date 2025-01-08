@@ -1,3 +1,4 @@
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,11 +7,14 @@ using static UnityEngine.UI.Image;
 public class sea_horse : MonoBehaviour
 {
     public float rayDistance = 25.0f;
-    public float rotationSpeed = 1.0f;
+    public float initialRotationSpeed = 1.0f;
+    private float rotationSpeed;
+
     public Vector3 startPos;
 
-    bool emitFire = false;
-    public float timeEmittingFire = 3.0f; // Time emitting fire after seeing player
+    bool emitFire = false, preheating = false;
+    public float timeEmittingFire = 3.0f, timePreheating = 0.5f; // Time emitting fire after seeing player and
+                                                                 // time to start firing upon seeing player
     float timer;
 
     // Fireballs
@@ -18,10 +22,20 @@ public class sea_horse : MonoBehaviour
     public float shootFireballInterval = 1f;
     public GameObject fireballSpawner;
 
+    // Smoke puffs
+    public ParticleSystem smokeParticleSystem;
+
+    // For FMOD fireball sound
+    StudioEventEmitter eventEmitter;
+
     void Start()
     {
         startPos = transform.position;
         startPos.y += 3.0f;
+
+        rotationSpeed = initialRotationSpeed;
+
+        eventEmitter = GetComponent<StudioEventEmitter>();
     }
 
     // Update is called once per frame
@@ -34,11 +48,13 @@ public class sea_horse : MonoBehaviour
         // Check if player seen, if so set emitting fire to true and start a timer
         if (Physics.Raycast(startPos, direction, out RaycastHit hit, rayDistance))
         {
-            if (hit.collider.CompareTag("Player") && !emitFire)
+            if (hit.collider.CompareTag("Player") && !preheating && !emitFire)
             {
-                emitFire = true;
-                timer = timeEmittingFire;
-                StartCoroutine(ShootFireballCoroutine());
+                //emitFire = true;
+                //timer = timeEmittingFire;
+                timer = timePreheating;
+                StartCoroutine(PreheatAnimationCoroutine());
+                //StartCoroutine(ShootFireballCoroutine());
             }
         }
 
@@ -55,12 +71,49 @@ public class sea_horse : MonoBehaviour
         Debug.DrawRay(startPos, direction * rayDistance, Color.red);
     }
 
+    IEnumerator PreheatAnimationCoroutine()
+    {
+        preheating = true;
+        rotationSpeed = .0f;
+
+        // Save initial position
+        Vector3 initialPosition = transform.position;
+        Vector3 targetPositionUp = initialPosition + new Vector3(0, 1f, 0);
+        float moveUpSpeed = 0.5f;
+
+        while (timer > 0)
+        {
+            // Move up while preheating
+            transform.position = Vector3.Lerp(transform.position, targetPositionUp, moveUpSpeed * Time.deltaTime);
+
+            timer -= Time.deltaTime;
+            yield return null;
+        }
+
+        preheating = false;
+        rotationSpeed = initialRotationSpeed;
+        timer = timeEmittingFire;
+        emitFire = true;
+        smokeParticleSystem.Play();
+
+        // Move the object down quickly
+        float moveDownSpeed = 5f;
+        while (transform.position.y > initialPosition.y)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, initialPosition, moveDownSpeed * Time.deltaTime);
+            yield return null;
+        }
+
+        StartCoroutine(ShootFireballCoroutine());
+    }
     void shootFireball()
     {
         GameObject fireball = fireballPool.GetPooledObject();
         fireball.transform.position = fireballSpawner.transform.position;
         fireball.transform.rotation = transform.rotation;
         fireball.GetComponent<Fireball>().startLifeTimer(); // Delete when lifetime is over
+        eventEmitter.Play();
+
 
         fireball.SetActive(true);
     }

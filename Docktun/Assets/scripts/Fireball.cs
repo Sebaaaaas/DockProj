@@ -33,7 +33,7 @@ public class Fireball : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         gameObject.SetActive(false);
-        Debug.Log("Hit");
+        
         if (other.CompareTag("Player"))
         {
             Debug.Log("PlayerHit");

@@ -4,10 +4,10 @@
 [LOG] SystemI::setOutputInternal               : Setting output to 'FMOD WASAPI Output'
 [LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=48000, nAvgBytesPerSec=384000, nBlockAlign=8, wBitsPerSample=32, cbSize=22.
 [LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x00000003, SubFormat=00000003-0000-0010-8000-00AA00389B71.
-[LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 12.00ms, DSP buffer: 1024 * 4
+[LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x4000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 00000211E83188F8 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 00000257D9E8C398 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -16,34 +16,144 @@
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
-[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
 [LOG] SystemI::createSound                     : filename = ../DocktunFMOD/Build/Desktop/BackgroundSounds.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
 [LOG] Thread::initThread                       : Init FMOD nonblocking thread (0). Affinity: 0x4000000000000003, Priority: 0xFFFF7FFC, Stack Size: 114688, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000002107CDB3B78, queue head = 00000210EA8FF818, queue count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002107CDB3B78
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000002567C6700A8, queue head = 00000254E3223188, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002567C6700A8
 [LOG] SystemI::createSoundInternal             :     Create name='../DocktunFMOD/Build/Desktop/BackgroundSounds.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 146944
 [LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 2048
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000210E7ABBF40
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000254EF2FCAC0
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
 [LOG] SystemI::createSoundInternal             :     Stream 0/1: name='DockSoundtrack', format=5, channels=2, frequency=48000, lengthbytes=146720, lengthpcm=576033, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.086670.
 [LOG] Thread::initThread                       :     Init FMOD file thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFC, Stack Size: 65536, Semaphore: No, Sleep Time: 10, Looping: Yes.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002107CDB3B78
-[LOG] SoundI::release                          : DockSoundtrack (000002107CDB3B78)
-[LOG] SoundI::release                          :     DockSoundtrack (00000210EB1762E8)
-[LOG] SoundI::release                          :     DockSoundtrack (000002107CDB4238)
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002567C6700A8
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 354848
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 5376
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B459D1F388
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFC51194130
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFC511940F0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFC51194210
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFC511942D0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000254EE920108
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='air_burst3', format=5, channels=2, frequency=48000, lengthbytes=14816, lengthpcm=54559, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.181091.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 354848
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 5376
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B459D1F388
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFC51194130
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFC511940F0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFC51194210
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFC511942D0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000254EE920108
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='air_burst2', format=5, channels=2, frequency=48000, lengthbytes=13600, lengthpcm=49504, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.204681.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 354848
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 5376
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B459D1F388
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFC51194130
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFC511940F0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFC51194210
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFC511942D0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000254EE920108
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='air_burst', format=5, channels=2, frequency=48000, lengthbytes=10688, lengthpcm=38753, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.280853.
+[LOG] SystemI::createSound                     : filename = ../DocktunFMOD/Build/Desktop/BackgroundSounds.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 00000254F5F92148, queue head = 00000254E3223188, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000254F5F92148
+[LOG] SystemI::createSoundInternal             :     Create name='../DocktunFMOD/Build/Desktop/BackgroundSounds.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 146944
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 2048
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000254F5C4F8C0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='DockSoundtrack', format=5, channels=2, frequency=48000, lengthbytes=146720, lengthpcm=576033, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.086670.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000254F5F92148
+[LOG] SoundI::release                          : DockSoundtrack (000002567C6700A8)
+[LOG] SoundI::release                          :     DockSoundtrack (00000254F52E6808)
+[LOG] SoundI::release                          :     DockSoundtrack (00000257C5EFD228)
+[LOG] SystemI::createSound                     : filename = ../DocktunFMOD/Build/Desktop/BackgroundSounds.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 00000254F5F922F8, queue head = 00000254E3223188, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000254F5F922F8
+[LOG] SystemI::createSoundInternal             :     Create name='../DocktunFMOD/Build/Desktop/BackgroundSounds.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 146944
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 2048
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000254F5C4FC80
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='DockSoundtrack', format=5, channels=2, frequency=48000, lengthbytes=146720, lengthpcm=576033, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.086670.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000254F5F922F8
+[LOG] SoundI::release                          : DockSoundtrack (00000254F5F92148)
+[LOG] SoundI::release                          :     DockSoundtrack (00000254E88C2A58)
+[LOG] SoundI::release                          :     DockSoundtrack (00000254F5AD40B8)
+[LOG] SystemI::createSound                     : filename = ../DocktunFMOD/Build/Desktop/BackgroundSounds.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 00000254F5259C78, queue head = 00000254E3223188, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000254F5259C78
+[LOG] SystemI::createSoundInternal             :     Create name='../DocktunFMOD/Build/Desktop/BackgroundSounds.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 146944
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 2048
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000254F4335090
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='DockSoundtrack', format=5, channels=2, frequency=48000, lengthbytes=146720, lengthpcm=576033, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.086670.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000254F5259C78
+[LOG] SoundI::release                          : DockSoundtrack (00000254F5259C78)
+[LOG] SoundI::release                          :     DockSoundtrack (00000254E88C2BF8)
+[LOG] SoundI::release                          :     DockSoundtrack (00000257DF8485A8)
+[LOG] SoundI::release                          : DockSoundtrack (00000254F5F922F8)
+[LOG] SoundI::release                          :     DockSoundtrack (00000254EB6A8B78)
+[LOG] SoundI::release                          :     DockSoundtrack (00000254F5AD4A78)
+[LOG] SoundI::release                          :  (000002567D1CAA88)
+[LOG] SoundI::release                          :     air_burst (00000254E31BC628)
+[LOG] SoundI::release                          :  (000002567D1CA078)
+[LOG] SoundI::release                          :     air_burst2 (00000254E31BC2E8)
+[LOG] SoundI::release                          :  (000002567D1CA638)
+[LOG] SoundI::release                          :     air_burst3 (00000254E31BCFE8)
+[LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
 [LOG] Thread::callback                         : FMOD Studio sample load thread finished.
 [LOG] LiveUpdate::release                      : 
 [LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
 [LOG] Thread::callback                         : FMOD stream thread finished.
 [LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
 [LOG] SystemI::close                           : Closed.
-[LOG] Thread::callback                         : FMOD nonblocking thread (0) finished.
-[LOG] Thread::callback                         : FMOD file thread finished.
+[ERR] assert                                   : assertion: 'gSystemInitCount == 0' failed
