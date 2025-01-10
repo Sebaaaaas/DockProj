@@ -7,7 +7,7 @@ using UnityEngine;
 public class player_controller : MonoBehaviour
 {
     // Possible actions by player that arent instant(moving would be instant)
-    enum InstantActions {ATTACK, DASH }
+    enum InstantActions {ATTACK }
     Queue<InstantActions> actions;
     InstantActions currentAction;
     float time_clear_action_queue = 0.5f, current_time_clear_Action_queue;
@@ -15,12 +15,14 @@ public class player_controller : MonoBehaviour
     // We cannot perform any action, instant or not, while we are performing an action
     bool performingInstantAction = false;
 
-    [SerializeField] private KeyCode dash_key = KeyCode.Joystick1Button8;
-    [SerializeField] private KeyCode attack_key = KeyCode.Joystick1Button9;
+    [SerializeField] private KeyCode attack_key = KeyCode.Joystick1Button5;
+    [SerializeField] private KeyCode run_key = KeyCode.Joystick1Button4;
 
     public float gravity = -9.8f;
 
-    [SerializeField] private float speed = 10.0f, dash_time = 0.1f, dash_speed = 0.2f, dashLength = 1.3f, attack_time = 0.2f;
+    [SerializeField] private float speed = 10.0f, attack_time = 0.2f, runSpeed = 14.0f;
+    bool running = false;
+
     public GameObject playerMesh;
     public GameObject playerSword;
     
@@ -44,18 +46,19 @@ public class player_controller : MonoBehaviour
         // Apply gravity
         character_controller.Move(new Vector3(0f, gravity, 0f) * Time.deltaTime);
 
-        Vector3 direction = Vector3.zero;
-
-        direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).normalized;
+        Vector3 direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).normalized; ;
 
         // Change player direction
         turn(direction);
 
         // Check for instant actions, add to actions queue
-        if (Input.GetKeyDown(dash_key))
-            actions.Enqueue(InstantActions.DASH);
-        if(Input.GetKeyDown(attack_key))
+        if (Input.GetKeyDown(attack_key))
             actions.Enqueue(InstantActions.ATTACK);
+
+        if (Input.GetKey(run_key))
+            running = true;
+        else
+            running = false;
 
         // If available, get next action to perform
         if (!performingInstantAction && actions.Count != 0)
@@ -69,9 +72,7 @@ public class player_controller : MonoBehaviour
             currentAction = actions.Dequeue();
             performingInstantAction = true;
 
-            if (currentAction == InstantActions.DASH)
-                StartCoroutine(DashCoroutine());
-            else if(currentAction == InstantActions.ATTACK)
+            if(currentAction == InstantActions.ATTACK)
                 StartCoroutine(AttackCoroutine());
         }
 
@@ -106,41 +107,13 @@ public class player_controller : MonoBehaviour
     {        
         if (direction.magnitude >= 0.1f)
         {
-            character_controller.Move(direction * speed * Time.deltaTime);
+            if(running)
+                character_controller.Move(direction * runSpeed * Time.deltaTime);
+            else
+                character_controller.Move(direction * speed * Time.deltaTime);
+
         }
     }
-
-    private IEnumerator DashCoroutine()
-    {
-        //Debug.Log("DASH");
-        float startTime = Time.time;
-        Vector3 startPosition = transform.position;
-        Vector3 dashDirection = playerMesh.transform.forward;
-        Vector3 dashDestination = startPosition + dashDirection * dashLength;
-        Debug.Log(dashDestination);
-
-        RaycastHit hit;
-        if (Physics.Raycast(startPosition, dashDirection, out hit, dashLength))
-        {
-            // If we hit something, set the dash destination to the point of impact
-            dashDestination = hit.point;
-        }
-
-        while (Time.time < startTime + dash_time)
-        {
-            float t = (Time.time - startTime) / dash_time;
-            transform.position = Vector3.Lerp(startPosition, dashDestination, t);
-            yield return null;
-        }
-        //Debug.Log("END DASH");
-
-        // Ensure we reach correct destination
-       
-        transform.position = dashDestination;
-
-        performingInstantAction = false;
-    }
-
     private IEnumerator AttackCoroutine()
     {
         //Debug.Log("ATTACK");

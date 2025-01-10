@@ -8,20 +8,25 @@ public class SlidingDoor : MonoBehaviour
     public bool open;
     bool moving = false;
     public float speed = 2f;
+
+    // How much the door will be moved when opened
     public Vector3 displacement = new Vector3(0, -4.5f, 0);
+    // Where the door should be located WHEN CLOSED, IN GLOBAL COORDINATES
     public Vector3 initialPosition;
 
+    public ParticleSystem ps;
 
-    // Si la puerta estaba abierta, se cierra, y viceversa
+    // Open/Close door
     public void changeDoorOpen()
     {
-        // Evitamos que abra/cierre mientras ya esta en proceso de abrir/cerrar
+        // Prevent opening/closing while already doing one of them
         if (moving)
         {
             Debug.Log("Cannot move door, animation already playing.");
             return;
         }
 
+        ps.Play();
         StartCoroutine(MoveDoor(open ? initialPosition : initialPosition + displacement));
        
     }
