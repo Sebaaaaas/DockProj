@@ -41,7 +41,7 @@ public class sea_horse : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(new Vector3(0, rotationSpeed, 0));
+        transform.Rotate(new Vector3(0, rotationSpeed, 0) * Time.deltaTime);
 
         Vector3 direction = transform.forward;
 
