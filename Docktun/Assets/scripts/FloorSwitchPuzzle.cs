@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FloorSwitchPuzzle : MonoBehaviour
 {
-    public GameObject[] switches;
+    public List<GameObject> switches;
     public GameObject fakeSwitch;
 
     // Door to open when puzzle is completed
@@ -20,5 +20,13 @@ public class FloorSwitchPuzzle : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void checkSwitchPresses()
+    {
+        //for(GameObject g : switches)
+        //{
+
+        //}
     }
 }
