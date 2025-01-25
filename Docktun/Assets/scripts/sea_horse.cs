@@ -28,6 +28,8 @@ public class sea_horse : MonoBehaviour
     // For FMOD fireball sound
     StudioEventEmitter eventEmitter;
 
+    // To avoid casting a ray when player is far away
+    public GameObject player;
     void Start()
     {
         startPos = transform.position;
@@ -44,9 +46,10 @@ public class sea_horse : MonoBehaviour
         transform.Rotate(new Vector3(0, rotationSpeed, 0) * Time.deltaTime);
 
         Vector3 direction = transform.forward;
-
-        // Check if player seen, if so set emitting fire to true and start a timer
-        if (Physics.Raycast(startPos, direction, out RaycastHit hit, rayDistance))
+        
+        // Check if player is nearby and seen, if so set emitting fire to true and start a timer
+        if ((transform.position - player.transform.position).magnitude < rayDistance && 
+            Physics.Raycast(startPos, direction, out RaycastHit hit, rayDistance))
         {
             if (hit.collider.CompareTag("Player") && !preheating && !emitFire)
             {
@@ -68,7 +71,8 @@ public class sea_horse : MonoBehaviour
             }
         }
 
-        Debug.DrawRay(startPos, direction * rayDistance, Color.red);
+        if ((transform.position - player.transform.position).magnitude < rayDistance)
+            Debug.DrawRay(startPos, direction * rayDistance, Color.red);
     }
 
     IEnumerator PreheatAnimationCoroutine()
