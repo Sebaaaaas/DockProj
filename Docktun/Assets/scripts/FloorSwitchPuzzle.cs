@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class FloorSwitchPuzzle : MonoBehaviour
 {
-    // REAL switches involved in puzzle(do not include "fake" switches)
+    // Switches involved in puzzle
     public List<GameObject> switches;
+
+    // Index of the final switch, be sure to have them as 0,1,2,...,x and declare this as x
+    public int finalSwitchIndex;
 
     // Door to open when puzzle is completed
     public GameObject doorToOpen;
@@ -13,18 +16,33 @@ public class FloorSwitchPuzzle : MonoBehaviour
     // Index of next switch which must be activated
     int switchIndex = 0;
 
+    float resetPuzzleTimer = 1.5f;
     public void receiveSwitchIndex(int index)
     {
         if (index == switchIndex) // Correct activation
         {
             switchIndex++;
-
-            if(switchIndex == switches.Count)
+            
+            if(switchIndex == finalSwitchIndex + 1)
                 doorToOpen.GetComponent<SlidingDoor>().changeDoorOpen();
         }
-        else // Incorrect activation, restar count
+        else // Incorrect activation, restart count
         {
-            switchIndex = 0;
+            StartCoroutine(ResetPuzzleCoroutine());
+            switchIndex = 0;            
         }
+    }
+
+    private IEnumerator ResetPuzzleCoroutine()
+    {
+        float timer = resetPuzzleTimer; // Wait before resetting puzzle
+        while (timer > 0)
+        {
+            timer -= Time.deltaTime;
+            yield return null; // Wait for the next frame
+        }
+
+        for (int i = 0; i < switches.Count; ++i)
+            switches[i].GetComponent<FloorSwitch>().deactivate();
     }
 }
