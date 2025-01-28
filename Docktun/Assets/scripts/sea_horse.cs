@@ -6,8 +6,8 @@ using static UnityEngine.UI.Image;
 
 public class sea_horse : MonoBehaviour
 {
-    public float rayDistance = 25.0f;
-    public float initialRotationSpeed = 1.0f;
+    [SerializeField] float rayDistance = 25.0f;
+    [SerializeField] float initialRotationSpeed = 1.0f;
     private float rotationSpeed;
 
     public Vector3 startPos;
@@ -29,7 +29,7 @@ public class sea_horse : MonoBehaviour
     StudioEventEmitter eventEmitter;
 
     // To avoid casting a ray when player is far away
-    public GameObject player;
+    [SerializeField] GameObject player;
     void Start()
     {
         startPos = transform.position;
@@ -43,24 +43,7 @@ public class sea_horse : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(new Vector3(0, rotationSpeed, 0) * Time.deltaTime);
-
-        Vector3 direction = transform.forward;
-        
-        // Check if player is nearby and seen, if so set emitting fire to true and start a timer
-        if ((transform.position - player.transform.position).magnitude < rayDistance && 
-            Physics.Raycast(startPos, direction, out RaycastHit hit, rayDistance))
-        {
-            if (hit.collider.CompareTag("Player") && !preheating && !emitFire)
-            {
-                //emitFire = true;
-                //timer = timeEmittingFire;
-                timer = timePreheating;
-                StartCoroutine(PreheatAnimationCoroutine());
-                //StartCoroutine(ShootFireballCoroutine());
-            }
-        }
-
+        transform.Rotate(new Vector3(0, rotationSpeed * Time.deltaTime, 0));              
 
         if (emitFire)
         {
@@ -68,6 +51,24 @@ public class sea_horse : MonoBehaviour
             if (timer <= 0)
             {
                 emitFire = false;
+            }
+        }
+
+        
+    }
+
+    private void FixedUpdate()
+    {
+        Vector3 direction = transform.forward;
+
+        // Check if player is nearby and seen, if so set emitting fire to true and start a timer
+        if ((transform.position - player.transform.position).magnitude < rayDistance &&
+            Physics.Raycast(startPos, direction, out RaycastHit hit, rayDistance))
+        {
+            if (hit.collider.CompareTag("Player") && !preheating && !emitFire)
+            {
+                timer = timePreheating;
+                StartCoroutine(PreheatAnimationCoroutine());
             }
         }
 
