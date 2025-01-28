@@ -6,14 +6,14 @@ public class openDoor : MonoBehaviour
 {
     public GameObject[] doors;
 
+    Animator animator;
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(collision.gameObject.name);
         if (collision.gameObject.tag == "Sword")
         {
             Debug.Log("ChangeDoors");
@@ -26,7 +26,7 @@ public class openDoor : MonoBehaviour
     {
         if (other.gameObject.tag == "Sword")
         {
-            Debug.Log("ChangeDoors");
+            animator.Play("Scene");
             for (int i = 0; i < doors.Length; i++)
                 doors[i].GetComponent<SlidingDoor>().changeDoorOpen();
         }

@@ -53,7 +53,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 12000
+  Length: 26793
 --- !u!114 &-7883411305759930576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,7 +80,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 2000
+  Length: 500
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,7 +106,7 @@ MonoBehaviour:
   - {fileID: 3816392042091350563}
   StringsBanks:
   - {fileID: 3983046348073240930}
-  cacheTime: 638718807708634298
+  cacheTime: 638735772502718643
   cacheVersion: 131619
 --- !u!114 &3816392042091350563
 MonoBehaviour:
@@ -123,7 +123,7 @@ MonoBehaviour:
   Path: ../DocktunFMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638718807708598508
+  lastModified: 638735772502683560
   FileSizes:
   - Name: Desktop
     Value: 360224
@@ -143,7 +143,7 @@ MonoBehaviour:
   Path: ../DocktunFMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638718807708634298
+  lastModified: 638735772502718643
   FileSizes:
   - Name: Desktop
     Value: 908
@@ -163,8 +163,8 @@ MonoBehaviour:
   Path: ../DocktunFMOD/Build/Desktop/BackgroundSounds.bank
   Name: BackgroundSounds
   StudioPath: bank:/BackgroundSounds
-  lastModified: 638696026549210957
+  lastModified: 638735772502415184
   FileSizes:
   - Name: Desktop
-    Value: 148992
+    Value: 251296
   Exists: 1

@@ -4,16 +4,12 @@ using UnityEngine;
 
 public class Fireball : MonoBehaviour
 {
-    public float speed = 1.5f;
-    public float lifetime = 3f;
-    private float remainingLifetime;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] float speed = 1.5f;
+    [SerializeField] float lifetime = 3f;
+    [SerializeField] int damage = 1;
 
-    // Update is called once per frame
+    private float remainingLifetime;
+
     void Update()
     {
         remainingLifetime -= Time.deltaTime;
@@ -22,7 +18,8 @@ public class Fireball : MonoBehaviour
             gameObject.SetActive(false);
         }
 
-        transform.position += transform.forward * speed * Time.deltaTime;
+        // Always multiply vectors later than floats for efficiency
+        transform.position += speed * Time.deltaTime * transform.forward;
     }
 
     public void startLifeTimer()
@@ -34,21 +31,10 @@ public class Fireball : MonoBehaviour
     {
         gameObject.SetActive(false);
         
-        if (other.CompareTag("Player"))
+        if (other.GetComponent<health>())
         {
-            Debug.Log("PlayerHit");
-            GameManager.instance.damagePlayer(1);
+            Debug.Log("Hit health-haver");
+            other.GetComponent<health>().TakeDamage(damage);
         }
     }
-
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    gameObject.SetActive(false);
-    //    Debug.Log("Hit");
-    //    if (collision.gameObject.CompareTag("Player"))
-    //    {
-    //        Debug.Log("PlayerHit");
-    //        GameManager.instance.damagePlayer(1);
-    //    }
-    //}
 }
