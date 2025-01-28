@@ -55,7 +55,7 @@ public class water_fall_reset : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("FallResetLayer"))
+        if (other.CompareTag("Void"))
         {
             ResetToGround();
             GetComponent<health>().TakeDamage(1);
