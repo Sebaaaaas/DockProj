@@ -14,6 +14,8 @@ public class player_health : health
     // For easy access to the heart icons
     List<Image> hearts = new List<Image>();
 
+    Invulnerability playerInvulnerability;
+
     private void Start()
     {
         currentHealth = maxHealth;
@@ -32,36 +34,31 @@ public class player_health : health
             if (i >= currentHealth)
                 hearts[i].sprite = emptyHeart;
         }
+
+        playerInvulnerability = GetComponent<Invulnerability>();
     }
     public override void TakeDamage(int damageTaken)
     {
-        base.TakeDamage(damageTaken);
-
-        int i = currentHealth;
-
-        if (i <= 0)
-            GameManager.instance.OnPlayerDeath();
-        else
+        if (!playerInvulnerability.getInvulnerable())
         {
-            while (i > currentHealth - damageTaken && i >= 0)
-            {
+            base.TakeDamage(damageTaken);
+
+            GetComponent<Invulnerability>().StartInvulnerability();
+
+            for(int i = maxHealth - 1; i >= currentHealth; --i)
                 hearts[i].sprite = emptyHeart;
-                --i;
-            }
-        }            
+
+            if (currentHealth <= 0)
+                GameManager.instance.OnPlayerDeath();            
+        }
     }
 
     public override void RestoreHealth(int healthRestored)
     {
-        base.RestoreHealth(healthRestored);
-        
-        int i = currentHealth;
+        base.RestoreHealth(healthRestored);        
 
-        while (i < currentHealth + healthRestored && i <= maxHealth)
-        {
-            hearts[i - 1].sprite = fullHeart;
-            ++i;
-        }
+        for(int i = 0; i < currentHealth; ++i)
+            hearts[i].sprite = fullHeart;
+ 
     }
-
 }

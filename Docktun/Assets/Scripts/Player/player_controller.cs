@@ -28,10 +28,6 @@ public class player_controller : MonoBehaviour
     
     CharacterController character_controller;
 
-    // If player falls into water/void, we keep track of where we should reset their position
-    public float timeBeforePositionReset = 1.5f;
-    public Vector3 lastPosBeforeFall;
-
     void Start()
     {        
         character_controller = GetComponent<CharacterController>();
@@ -87,19 +83,7 @@ public class player_controller : MonoBehaviour
 
             if(current_time_clear_Action_queue <= .0f)
                 actions.Clear();
-        }
-
-        // Save last spot player was grounded
-        Debug.DrawRay(transform.position, -transform.up * 3, Color.blue);
-        if (Physics.Raycast(transform.position, -transform.up, out RaycastHit hit, 3))
-        {            
-            if (hit.collider.CompareTag("FallResetLayer"))
-            {
-                lastPosBeforeFall = transform.position;
-            }
-
-        }
-
+        }        
 
         // Move player
         if (!performingInstantAction)
@@ -140,26 +124,5 @@ public class player_controller : MonoBehaviour
         playerSword.SetActive(false);
 
         performingInstantAction = false;
-    }
-
-    // Move the player to the last position where they were standing on an object with tag "FallResetLayer"
-    public void resetToSolidGround()
-    {
-        StartCoroutine(ResetCoroutine());
-    }
-
-    private IEnumerator ResetCoroutine()
-    {
-        float startTime = Time.time;
-
-        while (Time.time < startTime + timeBeforePositionReset)
-        {
-            yield return null;
-        }
-
-        // We have to disable the character controller momentarily so it doesnt override the position change
-        character_controller.enabled = false;
-        transform.SetPositionAndRotation(lastPosBeforeFall, transform.rotation);
-        character_controller.enabled = true;
-    }
+    }   
 }

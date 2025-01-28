@@ -6,7 +6,6 @@ public class Fireball : MonoBehaviour
 {
     [SerializeField] float speed = 1.5f;
     [SerializeField] float lifetime = 3f;
-    [SerializeField] int damage = 1;
 
     private float remainingLifetime;
 
@@ -31,10 +30,10 @@ public class Fireball : MonoBehaviour
     {
         gameObject.SetActive(false);
         
-        if (other.GetComponent<health>())
-        {
-            Debug.Log("Hit health-haver");
-            other.GetComponent<health>().TakeDamage(damage);
-        }
+        //if (other.GetComponent<health>())
+        //{
+        //    Debug.Log("Hit health-haver");
+        //    other.GetComponent<health>().TakeDamage(damage);
+        //}
     }
 }

@@ -8,6 +8,7 @@ public class damage_collider : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Hit");
         if (other.gameObject.GetComponent<health>())
         {
             other.gameObject.GetComponent<health>().TakeDamage(damage);
