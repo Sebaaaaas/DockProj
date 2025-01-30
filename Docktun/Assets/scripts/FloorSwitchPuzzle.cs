@@ -24,7 +24,10 @@ public class FloorSwitchPuzzle : MonoBehaviour
             switchIndex++;
             
             if(switchIndex == finalSwitchIndex + 1)
+            {
+                GetComponent<VCamActivation>().ActivateAttachedCamera();
                 doorToOpen.GetComponent<SlidingDoor>().changeDoorOpen();
+            }
         }
         else // Incorrect activation, restart count
         {

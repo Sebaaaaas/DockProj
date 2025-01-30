@@ -16,8 +16,9 @@ public class openDoor : MonoBehaviour
     {
         if (collision.gameObject.tag == "Sword")
         {
-            Debug.Log("ChangeDoors");
-            for(int i = 0; i < doors.Length; i++)
+            animator.Play("Target");
+            GetComponent<VCamActivation>().ActivateAttachedCamera();
+            for (int i = 0; i < doors.Length; i++)
                 doors[i].GetComponent<SlidingDoor>().changeDoorOpen();                  
         }
     }
@@ -26,7 +27,8 @@ public class openDoor : MonoBehaviour
     {
         if (other.gameObject.tag == "Sword")
         {
-            animator.Play("Scene");
+            animator.Play("Target");
+            GetComponent<VCamActivation>().ActivateAttachedCamera();
             for (int i = 0; i < doors.Length; i++)
                 doors[i].GetComponent<SlidingDoor>().changeDoorOpen();
         }
