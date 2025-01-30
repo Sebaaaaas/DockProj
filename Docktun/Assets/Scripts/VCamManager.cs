@@ -50,8 +50,9 @@ public class VCamManager : MonoBehaviour
 
     IEnumerator DeactivateInTime(float timeActive, int cameraIndex)
     {
-        yield return new WaitForSeconds(timeActive);
-
+        Time.timeScale = 0f;
+        yield return new WaitForSecondsRealtime(timeActive);
+        Time.timeScale = 1f;
         DeactivateCamera(cameraIndex);
     }
 }
