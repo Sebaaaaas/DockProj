@@ -25,6 +25,8 @@ public class player_controller : MonoBehaviour
 
     public GameObject playerMesh;
     public GameObject playerSword;
+
+    Animator playerMeshAnimator;
     
     CharacterController character_controller;
 
@@ -34,6 +36,8 @@ public class player_controller : MonoBehaviour
 
         actions = new Queue<InstantActions>();
         playerSword.SetActive(false);
+
+        playerMeshAnimator = playerMesh.GetComponent<Animator>();
     }
 
     void Update()
@@ -42,7 +46,16 @@ public class player_controller : MonoBehaviour
         // Apply gravity
         character_controller.Move(new Vector3(0f, gravity, 0f) * Time.deltaTime);
 
-        Vector3 direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).normalized; ;
+        Vector3 direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).normalized;
+
+        if (direction != Vector3.zero) // If moving
+        {
+            playerMeshAnimator.SetFloat("speed", 1);
+        }
+        else
+        {
+            playerMeshAnimator.SetFloat("speed", 0);
+        }
 
         // Change player direction
         turn(direction);

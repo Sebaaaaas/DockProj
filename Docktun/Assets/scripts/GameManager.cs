@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
+        Debug.Log(Application.consoleLogPath);
+
     }
     // Start is called before the first frame update
     void Start()
