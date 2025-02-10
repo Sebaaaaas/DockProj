@@ -7,7 +7,7 @@ public class blugAI : MonoBehaviour
 {
     public NavMeshAgent agent;
 
-    public Transform player;
+    GameObject player;
 
     public float health;    
 
@@ -27,8 +27,13 @@ public class blugAI : MonoBehaviour
     public bool playerInSightRange, playerInAttackRange;
 
     private void Awake()
-    {
+    {        
         agent = GetComponent<NavMeshAgent>();        
+    }
+
+    private void Start()
+    {
+                   
     }
 
     private void Update()
@@ -67,14 +72,14 @@ public class blugAI : MonoBehaviour
 
     private void ChasePlayer()
     {
-        agent.SetDestination(player.position);
+        agent.SetDestination(player.transform.position);
     }
 
     private void AttackPlayer()
     {
         agent.SetDestination(transform.position);
 
-        transform.LookAt(player);
+        transform.LookAt(player.transform);
 
         if (!alreadyAttacked)
         {

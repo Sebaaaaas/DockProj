@@ -1,3 +1,4 @@
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,15 +9,19 @@ public class target_open_door : MonoBehaviour
     [SerializeField] float timeBetweenActivations = 2f;
     bool hittable = true; // If object can be hit
     Animator animator;
+
+    StudioEventEmitter eventEmitter;
     void Start()
     {
         animator = GetComponent<Animator>();
+        eventEmitter = GetComponent<StudioEventEmitter>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (hittable && other.gameObject.tag == "Sword")
         {
+            eventEmitter.Play();
             hittable = false;
             animator.Play("Target");
             GetComponent<VCamActivation>().ActivateAttachedCamera();

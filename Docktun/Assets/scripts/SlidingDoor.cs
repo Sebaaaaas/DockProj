@@ -11,11 +11,18 @@ public class SlidingDoor : MonoBehaviour
 
     // How much the door will be moved when opened
     public Vector3 displacement = new Vector3(0, -4.5f, 0);
-    // Where the door should be located WHEN CLOSED, IN GLOBAL COORDINATES
-    public Vector3 initialPosition;
+    // Where the door should be located at first, if closed it will first move down, else it will first move up
+    Vector3 initialPosition;
 
     public ParticleSystem ps;
 
+    private void Start()
+    {
+        if(open)
+            initialPosition = transform.position - displacement;
+        else
+            initialPosition = transform.position;
+    }
     // Open/Close door
     public void changeDoorOpen()
     {
@@ -26,7 +33,8 @@ public class SlidingDoor : MonoBehaviour
             return;
         }
 
-        ps.Play();
+        ps.Play();        
+
         StartCoroutine(MoveDoor(open ? initialPosition : initialPosition + displacement));
        
     }
@@ -43,6 +51,7 @@ public class SlidingDoor : MonoBehaviour
         }
 
         transform.position = targetPosition; // Ensure the final position is exact
+
         moving = false;
         open = !open;
     }

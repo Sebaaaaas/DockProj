@@ -28,8 +28,7 @@ public class sea_horse : MonoBehaviour
     // For FMOD fireball sound
     StudioEventEmitter eventEmitter;
 
-    // To avoid casting a ray when player is far away
-    [SerializeField] GameObject player;
+    GameObject player;
     void Start()
     {
         startPos = transform.position;
@@ -38,6 +37,8 @@ public class sea_horse : MonoBehaviour
         rotationSpeed = initialRotationSpeed;
 
         eventEmitter = GetComponent<StudioEventEmitter>();
+
+        player = PlayerManager.instance.player;
     }
 
     // Update is called once per frame
@@ -52,9 +53,7 @@ public class sea_horse : MonoBehaviour
             {
                 emitFire = false;
             }
-        }
-
-        
+        }        
     }
 
     private void FixedUpdate()

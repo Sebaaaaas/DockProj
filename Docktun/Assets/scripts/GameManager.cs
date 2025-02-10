@@ -16,11 +16,8 @@ public class GameManager : MonoBehaviour
         else if(instance != this){
             Destroy(gameObject);
         }
-
-        Debug.Log(Application.consoleLogPath);
-
     }
-    // Start is called before the first frame update
+    
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;

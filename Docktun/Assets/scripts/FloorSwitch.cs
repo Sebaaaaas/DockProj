@@ -12,17 +12,20 @@ public class FloorSwitch : MonoBehaviour
 
     public Texture activeTex, inactiveTex;
 
+    bool active = true;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (active && other.gameObject.tag == "Player")
         {
             SwitchGroupManager.GetComponent<FloorSwitchPuzzle>().receiveSwitchIndex(index);
             GetComponent<MeshRenderer>().material.SetTexture("_MainTex", activeTex);
+            active = false;
         }
     }
 
     public void deactivate()
     {
         GetComponent<MeshRenderer>().material.SetTexture("_MainTex", inactiveTex);
+        active = true;
     }
 }

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EncodableAsset" id="{c7bc87b2-98c6-4621-9b67-17a5dc6fb04a}">
+		<property name="assetPath">
+			<value>wood_boing/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{34a59c8d-bb8f-411e-b8db-2cc5b438bf26}</destination>
+		</relationship>
+	</object>
+</objects>
