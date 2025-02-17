@@ -54,6 +54,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 500
+--- !u!114 &-4705056176193637022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/bell
+  m_EditorClassIdentifier: 
+  Path: event:/bell
+  Guid:
+    Data1: -1172647006
+    Data2: 1291200255
+    Data3: -353944937
+    Data4: -593775847
+  Banks:
+  - {fileID: 3816392042091350563}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
 --- !u!114 &-4397432194626078776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,12 +128,13 @@ MonoBehaviour:
   - {fileID: -8551519685339862765}
   - {fileID: -7883411305759930576}
   - {fileID: -4397432194626078776}
+  - {fileID: -4705056176193637022}
   EditorParameters: []
   MasterBanks:
   - {fileID: 3816392042091350563}
   StringsBanks:
   - {fileID: 3983046348073240930}
-  cacheTime: 638747189411178691
+  cacheTime: 638750865790516146
   cacheVersion: 131619
 --- !u!114 &3816392042091350563
 MonoBehaviour:
@@ -123,10 +151,10 @@ MonoBehaviour:
   Path: ../DocktunFMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638747189411143351
+  lastModified: 638750865790494418
   FileSizes:
   - Name: Desktop
-    Value: 59616
+    Value: 250048
   Exists: 1
 --- !u!114 &3983046348073240930
 MonoBehaviour:
@@ -143,10 +171,10 @@ MonoBehaviour:
   Path: ../DocktunFMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638747189411178691
+  lastModified: 638750865790516146
   FileSizes:
   - Name: Desktop
-    Value: 906
+    Value: 940
   Exists: 1
 --- !u!114 &6361577115753586849
 MonoBehaviour:

@@ -1,3 +1,4 @@
+using FMODUnity;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -29,6 +30,8 @@ public class player_controller : MonoBehaviour
     Animator playerMeshAnimator;
     
     CharacterController character_controller;
+
+    [SerializeField] EventReference bellClang;
 
     void Start()
     {        
@@ -127,6 +130,8 @@ public class player_controller : MonoBehaviour
         float startTime = Time.time;
         
         playerSword.SetActive(true);
+
+        FMODUnity.RuntimeManager.PlayOneShot(bellClang, transform.position);
 
         while (Time.time < startTime + attack_time)
         {

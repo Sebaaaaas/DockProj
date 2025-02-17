@@ -46,7 +46,7 @@ public class SlidingDoor : MonoBehaviour
         // Smoothly move the door towards the target position
         while (Vector3.Distance(transform.position, targetPosition) > 0.01f)
         {
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.unscaledDeltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
             yield return null; // Wait for the next frame
         }
 

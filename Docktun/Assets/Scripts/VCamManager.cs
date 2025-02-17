@@ -9,8 +9,10 @@ public class VCamManager : MonoBehaviour
     public static VCamManager instance;
 
     public List<CinemachineVirtualCamera> cameras;
-    
-    void Start()
+
+    PauseManager pauseManager;
+
+    private void Awake()
     {
         if (instance == null)
         {
@@ -21,6 +23,10 @@ public class VCamManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+    void Start()
+    {
+        pauseManager = PauseManager.instance;
     }
 
     // Activate camera, if positive value is given for timeActive, deactivate after timeActive seconds
@@ -50,9 +56,9 @@ public class VCamManager : MonoBehaviour
 
     IEnumerator DeactivateInTime(float timeActive, int cameraIndex)
     {
-        Time.timeScale = 0f;
+        pauseManager.Pause();
         yield return new WaitForSecondsRealtime(timeActive);
-        Time.timeScale = 1f;
         DeactivateCamera(cameraIndex);
+        pauseManager.Unpause();
     }
 }

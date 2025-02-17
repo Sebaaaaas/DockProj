@@ -10,11 +10,13 @@ public class target_open_door : MonoBehaviour
     bool hittable = true; // If object can be hit
     Animator animator;
 
+    
+
     StudioEventEmitter eventEmitter;
     void Start()
     {
         animator = GetComponent<Animator>();
-        eventEmitter = GetComponent<StudioEventEmitter>();
+        eventEmitter = GetComponent<StudioEventEmitter>();        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -22,9 +24,13 @@ public class target_open_door : MonoBehaviour
         if (hittable && other.gameObject.tag == "Sword")
         {
             eventEmitter.Play();
+
             hittable = false;
+
             animator.Play("Target");
+
             GetComponent<VCamActivation>().ActivateAttachedCamera();
+
             for (int i = 0; i < doors.Length; i++)
                 doors[i].GetComponent<SlidingDoor>().changeDoorOpen();
 
@@ -35,13 +41,13 @@ public class target_open_door : MonoBehaviour
     IEnumerator WaitForReactivation()
     {
         float countdown = timeBetweenActivations;
-
+        
         while(countdown > 0)
         {
             countdown-=Time.deltaTime;
             yield return null;
         }
-
+        
         hittable = true;
     }
 }
