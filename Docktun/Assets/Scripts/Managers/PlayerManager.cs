@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -13,10 +14,20 @@ public class PlayerManager : MonoBehaviour
         {
             DontDestroyOnLoad(gameObject);
             instance = this;
+            SceneManager.sceneLoaded += OnSceneLoaded;
         }
         else if (instance != this)
         {
             Destroy(gameObject);
         }
+    }
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        player = GameObject.FindWithTag("Player"); // Buscar el Player cuando se cargue una nueva escena
+    }
+
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 }
