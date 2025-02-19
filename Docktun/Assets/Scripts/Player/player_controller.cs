@@ -34,12 +34,15 @@ public class player_controller : MonoBehaviour
 
     [SerializeField] EventReference bellClang;
 
+    BoxCollider swordAreaCollider; // Its on the player mesh right now
+
     void Start()
     {        
         character_controller = GetComponent<CharacterController>();
 
         actions = new Queue<InstantActions>();
         //playerSword.SetActive(false);
+        swordAreaCollider = playerMesh.GetComponent<BoxCollider>();
 
         playerMeshAnimator = playerMesh.GetComponent<Animator>();
     }
@@ -129,8 +132,9 @@ public class player_controller : MonoBehaviour
     {
         //Debug.Log("ATTACK");
         float startTime = Time.time;
-        
+
         //playerSword.SetActive(true);
+        swordAreaCollider.enabled = true;
 
         //playerMeshAnimator.Play("Armature_001|Attack");
 
@@ -145,6 +149,7 @@ public class player_controller : MonoBehaviour
         playerSwordHand.transform.Rotate(new Vector3(0, -120, 0));
         //Debug.Log("END ATTACK");
         //playerSword.SetActive(false);
+        swordAreaCollider.enabled = false;
 
         performingInstantAction = false;
     }   
