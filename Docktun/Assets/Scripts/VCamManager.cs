@@ -25,6 +25,8 @@ public class VCamManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        DontDestroyOnLoad(instance);
     }
     void Start()
     {

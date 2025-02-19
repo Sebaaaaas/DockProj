@@ -18,8 +18,15 @@ public class PauseManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        DontDestroyOnLoad(instance);
     }
 
+    private void OnLevelWasLoaded()
+    {
+        pauseGameObjects.Clear();
+    }
+    
     // Gameobjects with the Pause component will add themselves automatically
     public void AddToPause(GameObject gameObject)
     {
