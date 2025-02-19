@@ -26,6 +26,7 @@ public class player_controller : MonoBehaviour
 
     public GameObject playerMesh;
     public GameObject playerSword;
+    public GameObject playerSwordHand;
 
     Animator playerMeshAnimator;
     
@@ -38,7 +39,7 @@ public class player_controller : MonoBehaviour
         character_controller = GetComponent<CharacterController>();
 
         actions = new Queue<InstantActions>();
-        playerSword.SetActive(false);
+        //playerSword.SetActive(false);
 
         playerMeshAnimator = playerMesh.GetComponent<Animator>();
     }
@@ -129,17 +130,21 @@ public class player_controller : MonoBehaviour
         //Debug.Log("ATTACK");
         float startTime = Time.time;
         
-        playerSword.SetActive(true);
+        //playerSword.SetActive(true);
+
+        //playerMeshAnimator.Play("Armature_001|Attack");
 
         FMODUnity.RuntimeManager.PlayOneShot(bellClang, transform.position);
-
+        
+        playerSwordHand.transform.Rotate(new Vector3(0,120,0));
         while (Time.time < startTime + attack_time)
         {
             yield return null;
         }
 
+        playerSwordHand.transform.Rotate(new Vector3(0, -120, 0));
         //Debug.Log("END ATTACK");
-        playerSword.SetActive(false);
+        //playerSword.SetActive(false);
 
         performingInstantAction = false;
     }   
