@@ -23,7 +23,8 @@ public class PlayerManager : MonoBehaviour
     }
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        player = GameObject.FindWithTag("Player"); // Buscar el Player cuando se cargue una nueva escena
+        if (scene.name == "SampleScene")
+            player = GameObject.FindWithTag("Player"); // Buscar el Player cuando se cargue una nueva escena
     }
 
     private void OnDestroy()

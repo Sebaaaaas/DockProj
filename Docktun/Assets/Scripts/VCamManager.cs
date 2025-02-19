@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
 
 public class VCamManager : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class VCamManager : MonoBehaviour
         {
             DontDestroyOnLoad(gameObject);
             instance = this;
+            SceneManager.sceneLoaded += OnSceneLoaded;
         }
         else if (instance != this)
         {
@@ -26,6 +28,7 @@ public class VCamManager : MonoBehaviour
     }
     void Start()
     {
+       
         pauseManager = PauseManager.instance;
     }
 
@@ -60,5 +63,19 @@ public class VCamManager : MonoBehaviour
         yield return new WaitForSecondsRealtime(timeActive);
         DeactivateCamera(cameraIndex);
         pauseManager.Unpause();
+    }
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "SampleScene")
+        {
+            cameras.Clear();
+            cameras.Add(GameObject.Find("CM vcam2").GetComponent<CinemachineVirtualCamera>()); // Buscar camaras cuando se cargue una nueva escena
+            cameras.Add(GameObject.Find("CM vcam3").GetComponent<CinemachineVirtualCamera>()); // Buscar camaras cuando se cargue una nueva escena
+        }
+    }
+    private void OnDestroy()
+    {
+    
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 }

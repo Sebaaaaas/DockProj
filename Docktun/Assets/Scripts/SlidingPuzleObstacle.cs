@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
-public class SlidingDoor : MonoBehaviour
+public class SlidingPuzleObstacle : MonoBehaviour
 {
+    public GameObject switcher;
     public bool open;
     bool moving = false;
     public float speed = 2f;
@@ -18,7 +18,7 @@ public class SlidingDoor : MonoBehaviour
 
     private void Start()
     {
-        if(open)
+        if (open)
             initialPosition = transform.position - displacement;
         else
             initialPosition = transform.position;
@@ -32,12 +32,11 @@ public class SlidingDoor : MonoBehaviour
             Debug.Log("Cannot move door, animation already playing.");
             return;
         }
-        if(ps!=null)
 
-            ps.Play();        
+        ps.Play();
 
         StartCoroutine(MoveDoor(open ? initialPosition : initialPosition + displacement));
-       
+
     }
 
     private IEnumerator MoveDoor(Vector3 targetPosition)
@@ -57,5 +56,3 @@ public class SlidingDoor : MonoBehaviour
         open = !open;
     }
 }
-
-

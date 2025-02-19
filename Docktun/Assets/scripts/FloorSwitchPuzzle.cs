@@ -45,7 +45,8 @@ public class FloorSwitchPuzzle : MonoBehaviour
             yield return null; // Wait for the next frame
         }
 
-        for (int i = 0; i < switches.Count; ++i)
+        for (int i = 0; i < switches.Count; ++i) 
             switches[i].GetComponent<FloorSwitch>().deactivate();
+
     }
 }

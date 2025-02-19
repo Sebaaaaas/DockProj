@@ -11,21 +11,26 @@ public class FloorSwitch : MonoBehaviour
     public int index = -1;
 
     public Texture activeTex, inactiveTex;
+    public GameObject slab;
 
-    bool active = true;
+    public bool active = true;
     private void OnTriggerEnter(Collider other)
     {
         if (active && other.gameObject.tag == "Player")
         {
             SwitchGroupManager.GetComponent<FloorSwitchPuzzle>().receiveSwitchIndex(index);
             GetComponent<MeshRenderer>().material.SetTexture("_MainTex", activeTex);
+            slab.GetComponent<SlidingDoor>().changeDoorOpen();
             active = false;
         }
     }
 
     public void deactivate()
     {
+
         GetComponent<MeshRenderer>().material.SetTexture("_MainTex", inactiveTex);
+        if(slab.GetComponent<SlidingDoor>().open)
+            slab.GetComponent<SlidingDoor>().changeDoorOpen();
         active = true;
     }
 }
