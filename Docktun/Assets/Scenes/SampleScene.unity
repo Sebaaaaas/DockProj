@@ -19023,7 +19023,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1426594586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37881,8 +37881,8 @@ MonoBehaviour:
   maxHealth: 10
   emptyHeart: {fileID: 21300000, guid: bf71463b1795fe4419b52ef07db55e27, type: 3}
   fullHeart: {fileID: 21300000, guid: f570fa7fa6c75cc478acb05afeb8071d, type: 3}
-  heartContainer: {fileID: 0}
-  heart: {fileID: 0}
+  heartContainer: {fileID: 1281391346}
+  heart: {fileID: 537029545}
   horizontalHeartDistance: 25
 --- !u!114 &2108252656
 MonoBehaviour:
