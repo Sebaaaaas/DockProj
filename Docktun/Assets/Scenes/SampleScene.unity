@@ -38083,8 +38083,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c00ebc076754e543bc37c7868b33502, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack_key: 323
-  run_key: 304
+  attack_key: 335
+  run_key: 334
   gravity: -25
   speed: 8
   attack_time: 0.3
