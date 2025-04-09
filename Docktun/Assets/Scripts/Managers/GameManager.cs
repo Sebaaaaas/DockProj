@@ -26,7 +26,9 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        Debug.Log(TelemetriaDOC.Class1.Multiply(2, 3));
+        //Debug.Log(TelemetriaDOC.Tracker.Number(2,3));
+        Debug.Log(TelemetriaDOC.Tracker.Init());
+        
 
         DontDestroyOnLoad(instance);
     }
