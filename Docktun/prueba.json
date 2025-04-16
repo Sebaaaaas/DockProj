@@ -1,26 +1,24 @@
 {
   {
     "id" :0,
-    "timestamp" : 0,0019415,
+    "timestamp" : 0.0036847,
+    "Position X" : -8,
+    "Position Y" : 5,
+    "Position Z" : 24
+  }
+{
+  {
+    "id" :0,
+    "timestamp" : 0.0058556,
+    "Position X" : 0,
+    "Position Y" : 5,
+    "Position Z" : 31
+  }
+{
+  {
+    "id" :0,
+    "timestamp" : 0.0032807,
     "Position X" : -7,
-    "Position Y" : 5,
-    "Position Z" : 16
-  }
-
-{
-  {
-    "id" :0,
-    "timestamp" : 0,0014701,
-    "Position X" : -9,
-    "Position Y" : 5,
-    "Position Z" : 39
-  }
-
-{
-  {
-    "id" :0,
-    "timestamp" : 0,0016306,
-    "Position X" : 2,
     "Position Y" : 5,
     "Position Z" : 47
   }
@@ -28,26 +26,83 @@
 {
   {
     "id" :0,
-    "timestamp" : 0,0016709,
-    "Position X" : 1,
+    "timestamp" : 0.0040224,
+    "Position X" : -4,
     "Position Y" : 5,
-    "Position Z" : 44
+    "Position Z" : 41
+  }
+{
+  {
+    "id" :0,
+    "timestamp" : 0.0050624,
+    "Position X" : 9,
+    "Position Y" : 5,
+    "Position Z" : 43
   }
 
 {
   {
     "id" :0,
-    "timestamp" : 0,0013676,
-    "Position X" : -6,
+    "timestamp" : 0.0042046,
+    "Position X" : -8,
     "Position Y" : 5,
     "Position Z" : 31
   }
+{
+  {
+    "id" :0,
+    "timestamp" : 0.0036966,
+    "Position X" : 0,
+    "Position Y" : 5,
+    "Position Z" : 47
+  }
+{
+  {
+    "id" :0,
+    "timestamp" : 0.0039469,
+    "Position X" : 6,
+    "Position Y" : 5,
+    "Position Z" : 36
+  }
 
 {
   {
     "id" :0,
-    "timestamp" : 0,0019498,
+    "timestamp" : 0.0043837,
+    "Position X" : 3,
+    "Position Y" : 5,
+    "Position Z" : 46
+  }
+{
+  {
+    "id" :0,
+    "timestamp" : 0.0037277,
+    "Position X" : 10,
+    "Position Y" : 5,
+    "Position Z" : 41
+  }
+
+{
+  {
+    "id" :0,
+    "timestamp" : 0.0033138,
     "Position X" : -10,
+    "Position Y" : 5,
+    "Position Z" : 10
+  }
+{
+  {
+    "id" :0,
+    "timestamp" : 0.0037654,
+    "Position X" : -5,
+    "Position Y" : 5,
+    "Position Z" : 10
+  }
+{
+  {
+    "id" :0,
+    "timestamp" : 0.0037689,
+    "Position X" : -8,
     "Position Y" : 5,
     "Position Z" : 10
   }
@@ -55,34 +110,15 @@
 {
   {
     "id" :0,
-    "timestamp" : 0,001639,
-    "Position X" : -10,
+    "timestamp" : 0.003337,
+    "Position X" : -14,
     "Position Y" : 5,
     "Position Z" : 10
   }
-
 {
   {
     "id" :0,
-    "timestamp" : 0,0017176,
-    "Position X" : -10,
-    "Position Y" : 5,
-    "Position Z" : 10
-  }
-
-{
-  {
-    "id" :0,
-    "timestamp" : 0,0020899,
-    "Position X" : -10,
-    "Position Y" : 5,
-    "Position Z" : 10
-  }
-
-{
-  {
-    "id" :0,
-    "timestamp" : 0,0015253,
+    "timestamp" : 0.0040004,
     "Position X" : -10,
     "Position Y" : 5,
     "Position Z" : 10

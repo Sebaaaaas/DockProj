@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8551519685339862765
+--- !u!114 &-8835175197276409736
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9,79 +9,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/music
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
   m_EditorClassIdentifier: 
-  Path: event:/music
-  Guid:
-    Data1: -1099861652
-    Data2: 1235045135
-    Data3: -683959907
-    Data4: -457126039
-  Banks:
-  - {fileID: 6361577115753586849}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 26793
---- !u!114 &-7883411305759930576
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/fireball
-  m_EditorClassIdentifier: 
-  Path: event:/fireball
-  Guid:
-    Data1: -195630616
-    Data2: 1134626829
-    Data3: 122816159
-    Data4: 482779259
-  Banks:
-  - {fileID: 3816392042091350563}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 500
---- !u!114 &-4705056176193637022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/bell
-  m_EditorClassIdentifier: 
-  Path: event:/bell
-  Guid:
-    Data1: -1172647006
-    Data2: 1291200255
-    Data3: -353944937
-    Data4: -593775847
-  Banks:
-  - {fileID: 3816392042091350563}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 2000
---- !u!114 &-4397432194626078776
+  Path: ../DocktunFMOD/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638750865790494418
+  FileSizes:
+  - Name: Desktop
+    Value: 250048
+  Exists: 1
+--- !u!114 &-8086839315521523451
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -100,7 +39,7 @@ MonoBehaviour:
     Data3: 2025085863
     Data4: 847671446
   Banks:
-  - {fileID: 3816392042091350563}
+  - {fileID: -8835175197276409736}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -108,75 +47,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
-  m_Name: FMODStudioCache
-  m_EditorClassIdentifier: 
-  EditorBanks:
-  - {fileID: 3983046348073240930}
-  - {fileID: 3816392042091350563}
-  - {fileID: 6361577115753586849}
-  EditorEvents:
-  - {fileID: -8551519685339862765}
-  - {fileID: -7883411305759930576}
-  - {fileID: -4397432194626078776}
-  - {fileID: -4705056176193637022}
-  EditorParameters: []
-  MasterBanks:
-  - {fileID: 3816392042091350563}
-  StringsBanks:
-  - {fileID: 3983046348073240930}
-  cacheTime: 638800191638889553
-  cacheVersion: 131619
---- !u!114 &3816392042091350563
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: ../DocktunFMOD/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 638800191638889553
-  FileSizes:
-  - Name: Desktop
-    Value: 250048
-  Exists: 1
---- !u!114 &3983046348073240930
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
-  m_EditorClassIdentifier: 
-  Path: ../DocktunFMOD/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 638800191638889553
-  FileSizes:
-  - Name: Desktop
-    Value: 940
-  Exists: 1
---- !u!114 &6361577115753586849
+--- !u!114 &-4677597901626944221
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -191,8 +62,137 @@ MonoBehaviour:
   Path: ../DocktunFMOD/Build/Desktop/BackgroundSounds.bank
   Name: BackgroundSounds
   StudioPath: bank:/BackgroundSounds
-  lastModified: 638800191638864501
+  lastModified: 638746271834581481
   FileSizes:
   - Name: Desktop
     Value: 566304
   Exists: 1
+--- !u!114 &-430910766399514780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/music
+  m_EditorClassIdentifier: 
+  Path: event:/music
+  Guid:
+    Data1: -1099861652
+    Data2: 1235045135
+    Data3: -683959907
+    Data4: -457126039
+  Banks:
+  - {fileID: -4677597901626944221}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 26793
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: 8564582703305426384}
+  - {fileID: -4677597901626944221}
+  - {fileID: -8835175197276409736}
+  EditorEvents:
+  - {fileID: -430910766399514780}
+  - {fileID: 7001959513051863746}
+  - {fileID: 9109992763159432389}
+  - {fileID: -8086839315521523451}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: -8835175197276409736}
+  StringsBanks:
+  - {fileID: 8564582703305426384}
+  cacheTime: 638750865790516146
+  cacheVersion: 131619
+--- !u!114 &7001959513051863746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/bell
+  m_EditorClassIdentifier: 
+  Path: event:/bell
+  Guid:
+    Data1: -1172647006
+    Data2: 1291200255
+    Data3: -353944937
+    Data4: -593775847
+  Banks:
+  - {fileID: -8835175197276409736}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &8564582703305426384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ../DocktunFMOD/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638750865790516146
+  FileSizes:
+  - Name: Desktop
+    Value: 940
+  Exists: 1
+--- !u!114 &9109992763159432389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/fireball
+  m_EditorClassIdentifier: 
+  Path: event:/fireball
+  Guid:
+    Data1: -195630616
+    Data2: 1134626829
+    Data3: 122816159
+    Data4: 482779259
+  Banks:
+  - {fileID: -8835175197276409736}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 500

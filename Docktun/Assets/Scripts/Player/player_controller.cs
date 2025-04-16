@@ -40,6 +40,7 @@ public class player_controller : MonoBehaviour
     float timetosend = 3;
     float timepassed = 0;
     int timesSended = 0;
+    bool closed = false;
 
     void Start()
     {        
@@ -115,7 +116,7 @@ public class player_controller : MonoBehaviour
             move(direction);
 
         //##########################PRUEBA DE ENVÍO
-        if (timepassed < timetosend&&timesSended<5)
+        if (timepassed < timetosend && timesSended < 5)
         {
             timepassed += Time.deltaTime;
         }
@@ -124,13 +125,14 @@ public class player_controller : MonoBehaviour
             timepassed = 0;
             timesSended++;
             //Guardar el timestampcon la posicion del jugador
-            TelemetriaDOC.Tracker.TrackEvent(
+            Tracker.TrackEvent(
                 new PositionEvent(0,Time.deltaTime, (int)transform.position.x, (int)transform.position.y, (int)transform.position.z));
             Debug.Log("Pos sended");
         }
-        if (timesSended >= 5)
+        if (timesSended >= 5 && !closed)
         {
-            TelemetriaDOC.Tracker.closing();
+            closed = true;
+            Tracker.closing();
             Debug.Log("Closed");
         }
     }
