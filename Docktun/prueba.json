@@ -1,7 +1,45 @@
 {
   {
     "id" :0,
-    "timestamp" : 0,
-    "Level" : 1
+    "timestamp" : 0,0019415,
+    "Position X" : -7,
+    "Position Y" : 5,
+    "Position Z" : 16
+  }
+
+{
+  {
+    "id" :0,
+    "timestamp" : 0,0014701,
+    "Position X" : -9,
+    "Position Y" : 5,
+    "Position Z" : 39
+  }
+
+{
+  {
+    "id" :0,
+    "timestamp" : 0,0016306,
+    "Position X" : 2,
+    "Position Y" : 5,
+    "Position Z" : 47
+  }
+
+{
+  {
+    "id" :0,
+    "timestamp" : 0,0016709,
+    "Position X" : 1,
+    "Position Y" : 5,
+    "Position Z" : 44
+  }
+
+{
+  {
+    "id" :0,
+    "timestamp" : 0,0013676,
+    "Position X" : -6,
+    "Position Y" : 5,
+    "Position Z" : 31
   }
 

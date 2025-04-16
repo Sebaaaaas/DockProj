@@ -36,6 +36,12 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+
+        
+    }
+
+    private void Update()
+    {
         
     }
 
@@ -43,6 +49,7 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Ded");
         SceneManager.LoadScene("GameOver");
+        //TelemetriaDOC.Tracker.
     }
 
 }

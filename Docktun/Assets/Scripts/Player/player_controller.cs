@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using TelemetriaDOC;
 
 public class player_controller : MonoBehaviour
 {
@@ -35,6 +36,10 @@ public class player_controller : MonoBehaviour
     [SerializeField] EventReference bellClang;
 
     BoxCollider swordAreaCollider; // Its on the player mesh right now
+
+    float timetosend = 3;
+    float timepassed = 0;
+    int timesSended = 0;
 
     void Start()
     {        
@@ -108,6 +113,26 @@ public class player_controller : MonoBehaviour
         // Move player
         if (!performingInstantAction)
             move(direction);
+
+        //##########################PRUEBA DE ENVÍO
+        if (timepassed < timetosend&&timesSended<5)
+        {
+            timepassed += Time.deltaTime;
+        }
+        else
+        {
+            timepassed = 0;
+            timesSended++;
+            //Guardar el timestampcon la posicion del jugador
+            TelemetriaDOC.Tracker.TrackEvent(
+                new PositionEvent(0,Time.deltaTime, (int)transform.position.x, (int)transform.position.y, (int)transform.position.z));
+            Debug.Log("Pos sended");
+        }
+        if (timesSended >= 5)
+        {
+            TelemetriaDOC.Tracker.closing();
+            Debug.Log("Closed");
+        }
     }
 
     private void turn(Vector3 direction)
