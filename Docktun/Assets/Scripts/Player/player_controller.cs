@@ -126,7 +126,7 @@ public class player_controller : MonoBehaviour
             timesSended++;
             //Guardar el timestampcon la posicion del jugador
             Tracker.TrackEvent(
-                new PositionEvent(0,Time.deltaTime, (int)transform.position.x, (int)transform.position.y, (int)transform.position.z));
+                new PositionEvent(Time.deltaTime, (int)transform.position.x, (int)transform.position.y, (int)transform.position.z));
             Debug.Log("Pos sended");
         }
         if (timesSended >= 5 && !closed)
