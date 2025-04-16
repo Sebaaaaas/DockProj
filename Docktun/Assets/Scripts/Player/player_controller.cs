@@ -119,7 +119,7 @@ public class player_controller : MonoBehaviour
         {
             timepassed += Time.deltaTime;
         }
-        else
+        else if (timesSended < 5)
         {
             timepassed = 0;
             timesSended++;
