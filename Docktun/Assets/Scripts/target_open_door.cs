@@ -2,6 +2,7 @@ using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TelemetriaDOC;
 
 public class target_open_door : MonoBehaviour
 {
@@ -21,11 +22,15 @@ public class target_open_door : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (hittable && other.gameObject.tag == "Sword")
+        if ((hittable && other.gameObject.tag == "Sword")|| (hittable && other.gameObject.tag == "Fire"))
         {
+            hittable = false;
+
+            Tracker.TrackEvent(new TargetHitEvent(Time.deltaTime, other.gameObject.tag));
+            
             eventEmitter.Play();
 
-            hittable = false;
+            
 
             animator.Play("Target");
 

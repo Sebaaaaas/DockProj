@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.UI.Image;
+using TelemetriaDOC;
 
 public class sea_horse : MonoBehaviour
 {
@@ -67,6 +68,7 @@ public class sea_horse : MonoBehaviour
             if (hit.collider.CompareTag("Player") && !preheating && !emitFire)
             {
                 timer = timePreheating;
+                Tracker.TrackEvent(new FireActivatedEvent(Time.deltaTime));
                 StartCoroutine(PreheatAnimationCoroutine());
             }
         }
