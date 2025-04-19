@@ -11,8 +11,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-
-    
+    System.Guid gameID;
 
     private void Awake()
     {
@@ -27,6 +26,7 @@ public class GameManager : MonoBehaviour
         }
 
         //Debug.Log(TelemetriaDOC.Tracker.Number(2,3));
+        gameID = System.Guid.NewGuid();
         Debug.Log(TelemetriaDOC.Tracker.Init());
 
         Tracker.TrackEvent(new SessionEvent(Time.deltaTime, SessionEvent.EventType.SessionStart));
@@ -37,8 +37,13 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        Tracker.TrackEvent(new Puzzle1StartEvent(Time.realtimeSinceStartup, GetGameID()));
 
-        
+    }
+
+    public System.Guid GetGameID()
+    {
+        return gameID;
     }
 
     private void Update()

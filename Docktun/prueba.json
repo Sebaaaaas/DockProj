@@ -1,189 +1,93 @@
 [
   {
-    "id" :87c8a2b6-721e-4eda-bc45-2a1495832a75,
-    "timestamp" : 0,02,
+    "id" :310e4dd3-8577-437c-9882-b66aa139fbc8,
+    "timestamp" : 0.02,
     "Type" : SessionStart
   },
   {
-    "id" :87c8a2b6-721e-4eda-bc45-2a1495832a75,
-    "timestamp" : 0,0020501,
-    "Position X" : -11,
+    "id" :310e4dd3-8577-437c-9882-b66aa139fbc8,
+    "timestamp" : 0.0080718,
+    "Position X" : -10,
     "Position Y" : 5,
-    "Position Z" : 28
+    "Position Z" : 10
   },
   {
-    "id" :87c8a2b6-721e-4eda-bc45-2a1495832a75,
-    "timestamp" : 0,001791,
-    "Position X" : -7,
+    "id" :310e4dd3-8577-437c-9882-b66aa139fbc8,
+    "timestamp" : 0.0105521,
+    "Position X" : -10,
+    "Position Y" : 5,
+    "Position Z" : 10
+  },
+
+  {
+    "id" :310e4dd3-8577-437c-9882-b66aa139fbc8,
+    "timestamp" : 0.0073064,
+    "Position X" : -9,
+    "Position Y" : 5,
+    "Position Z" : 26
+  },
+  {
+    "id" :310e4dd3-8577-437c-9882-b66aa139fbc8,
+    "timestamp" : 0.0075819,
+    "Position X" : -2,
     "Position Y" : 5,
     "Position Z" : 44
   },
-
   {
-    "id" :87c8a2b6-721e-4eda-bc45-2a1495832a75,
-    "timestamp" : 0,02,
-    "FireActivated" : True
-  },
-  {
-    "id" :87c8a2b6-721e-4eda-bc45-2a1495832a75,
-    "timestamp" : 0,0020785,
-    "Position X" : -7,
+    "id" :310e4dd3-8577-437c-9882-b66aa139fbc8,
+    "timestamp" : 0.0078536,
+    "Position X" : 5,
     "Position Y" : 5,
-    "Position Z" : 28
-  },
-  {
-    "id" :87c8a2b6-721e-4eda-bc45-2a1495832a75,
-    "timestamp" : 0,02,
-    "Hitter" : Fire
+    "Position Z" : 43
   },
 
-  {
-    "id" :87c8a2b6-721e-4eda-bc45-2a1495832a75,
-    "timestamp" : 0,02,
-    "Hitter" : Fire
-  },
-  {
-    "id" :87c8a2b6-721e-4eda-bc45-2a1495832a75,
-    "timestamp" : 0,02,
-    "Hitter" : Fire
-  },
-  {
-    "id" :87c8a2b6-721e-4eda-bc45-2a1495832a75,
-    "timestamp" : 0,02,
-    "Hitter" : Fire
-  },
-
-  {
-    "id" :87c8a2b6-721e-4eda-bc45-2a1495832a75,
-    "timestamp" : 0,02,
-    "Hitter" : Fire
-  },
-  {
-    "id" :87c8a2b6-721e-4eda-bc45-2a1495832a75,
-    "timestamp" : 0,02,
-    "Hitter" : Fire
-  },
-  {
-    "id" :87c8a2b6-721e-4eda-bc45-2a1495832a75,
-    "timestamp" : 0,02,
-    "Hitter" : Fire
-  },
-
-  {
-    "id" :87c8a2b6-721e-4eda-bc45-2a1495832a75,
-    "timestamp" : 0,02,
-    "Hitter" : Fire
-  },
-  {
-    "id" :87c8a2b6-721e-4eda-bc45-2a1495832a75,
-    "timestamp" : 0,02,
-    "Hitter" : Fire
-  },
-  {
-    "id" :87c8a2b6-721e-4eda-bc45-2a1495832a75,
-    "timestamp" : 0,0020017,
-    "Position X" : -7,
-    "Position Y" : 5,
-    "Position Z" : 28
-  },
-
-  {
-    "id" :87c8a2b6-721e-4eda-bc45-2a1495832a75,
-    "timestamp" : 0,0017454,
-    "Position X" : -7,
-    "Position Y" : 5,
-    "Position Z" : 28
-  },
 
 [
   {
-    "id" :e0944f3a-f492-4dee-8722-e545cf8734da,
-    "timestamp" : 0,02,
+    "id" :85f92b56-e1e8-473e-b67a-8c0f3353083a,
+    "timestamp" : 0.02,
     "Type" : SessionStart
   },
   {
-    "id" :e0944f3a-f492-4dee-8722-e545cf8734da,
-    "timestamp" : 0,0019876,
+    "id" :85f92b56-e1e8-473e-b67a-8c0f3353083a,
+    "timestamp" : 0.0034206,
+    "Position X" : -26,
+    "Position Y" : 7,
+    "Position Z" : 20
+  },
+  {
+    "id" :85f92b56-e1e8-473e-b67a-8c0f3353083a,
+    "timestamp" : 7.780703,
+    "GameID" : ded1711d-2f56-4976-abfc-9fc40808713e
+  },
+
+  {
+    "id" :85f92b56-e1e8-473e-b67a-8c0f3353083a,
+    "timestamp" : 0.0030758,
+    "Position X" : -23,
+    "Position Y" : 6,
+    "Position Z" : 19
+  },
+  {
+    "id" :85f92b56-e1e8-473e-b67a-8c0f3353083a,
+    "timestamp" : 0.0043254,
+    "Position X" : -20,
+    "Position Y" : 9,
+    "Position Z" : 6
+  },
+  {
+    "id" :85f92b56-e1e8-473e-b67a-8c0f3353083a,
+    "timestamp" : 0.0034901,
     "Position X" : -10,
     "Position Y" : 5,
-    "Position Z" : 29
+    "Position Z" : 15
   },
+
   {
-    "id" :e0944f3a-f492-4dee-8722-e545cf8734da,
-    "timestamp" : 0,001826,
-    "Position X" : -4,
+    "id" :85f92b56-e1e8-473e-b67a-8c0f3353083a,
+    "timestamp" : 0.0031054,
+    "Position X" : -6,
     "Position Y" : 5,
-    "Position Z" : 48
+    "Position Z" : 17
   },
-
-  {
-    "id" :e0944f3a-f492-4dee-8722-e545cf8734da,
-    "timestamp" : 0,02,
-    "FireActivated" : True
-  },
-  {
-    "id" :e0944f3a-f492-4dee-8722-e545cf8734da,
-    "timestamp" : 0,0018413,
-    "Position X" : 5,
-    "Position Y" : 5,
-    "Position Z" : 48
-  },
-  {
-    "id" :e0944f3a-f492-4dee-8722-e545cf8734da,
-    "timestamp" : 0,02,
-    "Hitter" : Fire
-  },
-
-  {
-    "id" :e0944f3a-f492-4dee-8722-e545cf8734da,
-    "timestamp" : 0,02,
-    "Hitter" : Fire
-  },
-  {
-    "id" :e0944f3a-f492-4dee-8722-e545cf8734da,
-    "timestamp" : 0,02,
-    "Hitter" : Fire
-  },
-  {
-    "id" :e0944f3a-f492-4dee-8722-e545cf8734da,
-    "timestamp" : 0,02,
-    "Hitter" : Fire
-  },
-
-  {
-    "id" :e0944f3a-f492-4dee-8722-e545cf8734da,
-    "timestamp" : 0,02,
-    "Hitter" : Fire
-  },
-  {
-    "id" :e0944f3a-f492-4dee-8722-e545cf8734da,
-    "timestamp" : 0,02,
-    "Hitter" : Fire
-  },
-  {
-    "id" :e0944f3a-f492-4dee-8722-e545cf8734da,
-    "timestamp" : 0,02,
-    "Hitter" : Fire
-  },
-
-  {
-    "id" :e0944f3a-f492-4dee-8722-e545cf8734da,
-    "timestamp" : 0,02,
-    "Hitter" : Fire
-  },
-  {
-    "id" :e0944f3a-f492-4dee-8722-e545cf8734da,
-    "timestamp" : 0,0021639,
-    "Position X" : 14,
-    "Position Y" : 5,
-    "Position Z" : 48
-  },
-  {
-    "id" :e0944f3a-f492-4dee-8722-e545cf8734da,
-    "timestamp" : 0,001736,
-    "Position X" : 14,
-    "Position Y" : 5,
-    "Position Z" : 48
-  },
-
 

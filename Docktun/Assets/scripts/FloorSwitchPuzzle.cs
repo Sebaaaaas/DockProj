@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TelemetriaDOC;
 using UnityEngine;
 
 public class FloorSwitchPuzzle : MonoBehaviour
@@ -27,6 +28,8 @@ public class FloorSwitchPuzzle : MonoBehaviour
             {
                 GetComponent<VCamActivation>().ActivateAttachedCamera();
                 doorToOpen.GetComponent<SlidingDoor>().changeDoorOpen();
+
+                Tracker.TrackEvent(new Puzzle2EndEvent(Time.realtimeSinceStartup, GameManager.instance.GetGameID()));
             }
         }
         else // Incorrect activation, restart count
