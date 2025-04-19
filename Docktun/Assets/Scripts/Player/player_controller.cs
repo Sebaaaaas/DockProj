@@ -95,7 +95,10 @@ public class player_controller : MonoBehaviour
             performingInstantAction = true;
 
             if(currentAction == InstantActions.ATTACK)
+            {
+                Tracker.TrackEvent(new PlayerAttackEvent(Time.deltaTime));
                 StartCoroutine(AttackCoroutine());
+            }
         }
 
         // Reset action quere timer
