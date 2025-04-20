@@ -1,270 +1,259 @@
 [
   {
-    "id" :ee4a5f73-b037-493a-82b4-323094a44f83,
-    "timestamp" : 1,500557,
+    "id" :f58ea1f6-7406-4574-8d63-5beaecb7811e,
+    "timestamp" : 1,487454,
     "Type" : SessionStart
   },
   {
-    "id" :ee4a5f73-b037-493a-82b4-323094a44f83,
-    "timestamp" : 1,882755,
-    "GameID" : acf97d03-7af2-447f-9a6c-560eb0cc61f5
+    "id" :f58ea1f6-7406-4574-8d63-5beaecb7811e,
+    "timestamp" : 1,858729,
+    "GameID" : 6e28a649-a331-4f47-a7b5-348e7a45e68c
   },
   {
-    "id" :ee4a5f73-b037-493a-82b4-323094a44f83,
-    "timestamp" : 3,534668,
-    "Type" : SessionEnd
-  },
-
-
-[
-  {
-    "id" :8729ea00-4703-484c-9239-5bb840b34f7e,
-    "timestamp" : 1,483442,
-    "Type" : SessionStart
-  },
-  {
-    "id" :8729ea00-4703-484c-9239-5bb840b34f7e,
-    "timestamp" : 1,864842,
-    "GameID" : 763382c2-7c38-4d25-addd-1e35000a6662
-  },
-  {
-    "id" :8729ea00-4703-484c-9239-5bb840b34f7e,
-    "timestamp" : 5,248626,
+    "id" :f58ea1f6-7406-4574-8d63-5beaecb7811e,
+    "timestamp" : 5,241471,
     "Position X" : -8,
     "Position Y" : 5,
-    "Position Z" : 21
+    "Position Z" : 11
   },
 
   {
-    "id" :8729ea00-4703-484c-9239-5bb840b34f7e,
-    "timestamp" : 8,250101,
-    "Position X" : -6,
+    "id" :f58ea1f6-7406-4574-8d63-5beaecb7811e,
+    "timestamp" : 8,243095,
+    "Position X" : -9,
     "Position Y" : 5,
-    "Position Z" : 28
+    "Position Z" : 31
   },
   {
-    "id" :8729ea00-4703-484c-9239-5bb840b34f7e,
-    "timestamp" : 0,02,
-    "FireActivated" : True
-  },
-  {
-    "id" :8729ea00-4703-484c-9239-5bb840b34f7e,
-    "timestamp" : 11,25203,
+    "id" :f58ea1f6-7406-4574-8d63-5beaecb7811e,
+    "timestamp" : 11,24503,
     "Position X" : -4,
     "Position Y" : 5,
-    "Position Z" : 44
-  },
-
-  {
-    "id" :8729ea00-4703-484c-9239-5bb840b34f7e,
-    "timestamp" : 12,04778,
-    "Hitter" : Fire
+    "Position Z" : 46
   },
   {
-    "id" :8729ea00-4703-484c-9239-5bb840b34f7e,
-    "timestamp" : 12,10653,
-    "Hitter" : Fire
-  },
-  {
-    "id" :8729ea00-4703-484c-9239-5bb840b34f7e,
-    "timestamp" : 12,18665,
-    "Hitter" : Fire
-  },
-
-  {
-    "id" :8729ea00-4703-484c-9239-5bb840b34f7e,
-    "timestamp" : 12,24743,
-    "Hitter" : Fire
-  },
-  {
-    "id" :8729ea00-4703-484c-9239-5bb840b34f7e,
-    "timestamp" : 12,32649,
-    "Hitter" : Fire
-  },
-  {
-    "id" :8729ea00-4703-484c-9239-5bb840b34f7e,
-    "timestamp" : 12,40759,
-    "Hitter" : Fire
-  },
-
-  {
-    "id" :8729ea00-4703-484c-9239-5bb840b34f7e,
-    "timestamp" : 12,4868,
-    "Hitter" : Fire
-  },
-  {
-    "id" :8729ea00-4703-484c-9239-5bb840b34f7e,
-    "timestamp" : 12,56664,
-    "Hitter" : Fire
-  },
-  {
-    "id" :8729ea00-4703-484c-9239-5bb840b34f7e,
-    "timestamp" : 14,25442,
+    "id" :f58ea1f6-7406-4574-8d63-5beaecb7811e,
+    "timestamp" : 14,247,
     "Position X" : -8,
     "Position Y" : 5,
-    "Position Z" : 43
+    "Position Z" : 42
   },
 
   {
-    "id" :8729ea00-4703-484c-9239-5bb840b34f7e,
-    "timestamp" : 17,2565,
+    "id" :f58ea1f6-7406-4574-8d63-5beaecb7811e,
+    "timestamp" : 17,24893,
     "Position X" : -8,
     "Position Y" : 5,
     "Position Z" : 43
   },
   {
-    "id" :8729ea00-4703-484c-9239-5bb840b34f7e,
-    "timestamp" : 0,02,
+    "id" :f58ea1f6-7406-4574-8d63-5beaecb7811e,
+    "timestamp" : 22,87942,
     "FireActivated" : True
   },
   {
-    "id" :8729ea00-4703-484c-9239-5bb840b34f7e,
-    "timestamp" : 30,10685,
+    "id" :f58ea1f6-7406-4574-8d63-5beaecb7811e,
+    "timestamp" : 26,40043,
     "Hitter" : Fire
   },
 
   {
-    "id" :8729ea00-4703-484c-9239-5bb840b34f7e,
-    "timestamp" : 30,1878,
+    "id" :f58ea1f6-7406-4574-8d63-5beaecb7811e,
+    "timestamp" : 26,47951,
     "Hitter" : Fire
   },
   {
-    "id" :8729ea00-4703-484c-9239-5bb840b34f7e,
-    "timestamp" : 30,24751,
+    "id" :f58ea1f6-7406-4574-8d63-5beaecb7811e,
+    "timestamp" : 26,54026,
     "Hitter" : Fire
   },
   {
-    "id" :8729ea00-4703-484c-9239-5bb840b34f7e,
-    "timestamp" : 30,32748,
-    "Hitter" : Fire
-  },
-
-  {
-    "id" :8729ea00-4703-484c-9239-5bb840b34f7e,
-    "timestamp" : 30,40648,
-    "Hitter" : Fire
-  },
-  {
-    "id" :8729ea00-4703-484c-9239-5bb840b34f7e,
-    "timestamp" : 30,46671,
-    "Hitter" : Fire
-  },
-  {
-    "id" :8729ea00-4703-484c-9239-5bb840b34f7e,
-    "timestamp" : 30,54655,
+    "id" :f58ea1f6-7406-4574-8d63-5beaecb7811e,
+    "timestamp" : 26,62033,
     "Hitter" : Fire
   },
 
   {
-    "id" :8729ea00-4703-484c-9239-5bb840b34f7e,
-    "timestamp" : 30,62777,
+    "id" :f58ea1f6-7406-4574-8d63-5beaecb7811e,
+    "timestamp" : 26,6802,
     "Hitter" : Fire
   },
   {
-    "id" :8729ea00-4703-484c-9239-5bb840b34f7e,
-    "timestamp" : 30,7076,
+    "id" :f58ea1f6-7406-4574-8d63-5beaecb7811e,
+    "timestamp" : 26,7593,
     "Hitter" : Fire
   },
   {
-    "id" :8729ea00-4703-484c-9239-5bb840b34f7e,
-    "timestamp" : 0,02,
-    "FireActivated" : True
-  },
-
-  {
-    "id" :8729ea00-4703-484c-9239-5bb840b34f7e,
-    "timestamp" : 45,30763,
-    "Hitter" : Fire
-  },
-  {
-    "id" :8729ea00-4703-484c-9239-5bb840b34f7e,
-    "timestamp" : 45,38732,
-    "Hitter" : Fire
-  },
-  {
-    "id" :8729ea00-4703-484c-9239-5bb840b34f7e,
-    "timestamp" : 45,44643,
+    "id" :f58ea1f6-7406-4574-8d63-5beaecb7811e,
+    "timestamp" : 26,83952,
     "Hitter" : Fire
   },
 
   {
-    "id" :8729ea00-4703-484c-9239-5bb840b34f7e,
-    "timestamp" : 45,52684,
+    "id" :f58ea1f6-7406-4574-8d63-5beaecb7811e,
+    "timestamp" : 26,91994,
     "Hitter" : Fire
   },
   {
-    "id" :8729ea00-4703-484c-9239-5bb840b34f7e,
-    "timestamp" : 45,60753,
+    "id" :f58ea1f6-7406-4574-8d63-5beaecb7811e,
+    "timestamp" : 26,99957,
     "Hitter" : Fire
   },
   {
-    "id" :8729ea00-4703-484c-9239-5bb840b34f7e,
-    "timestamp" : 45,66758,
-    "Hitter" : Fire
-  },
-
-  {
-    "id" :8729ea00-4703-484c-9239-5bb840b34f7e,
-    "timestamp" : 45,74652,
-    "Hitter" : Fire
-  },
-  {
-    "id" :8729ea00-4703-484c-9239-5bb840b34f7e,
-    "timestamp" : 45,82922,
-    "Hitter" : Fire
-  },
-  {
-    "id" :8729ea00-4703-484c-9239-5bb840b34f7e,
-    "timestamp" : 49,06723,
-    "GameID" : 763382c2-7c38-4d25-addd-1e35000a6662
-  },
-
-  {
-    "id" :8729ea00-4703-484c-9239-5bb840b34f7e,
-    "timestamp" : 49,06738,
-    "GameID" : 763382c2-7c38-4d25-addd-1e35000a6662
-  },
-  {
-    "id" :8729ea00-4703-484c-9239-5bb840b34f7e,
-    "timestamp" : 60,96669,
-    "GameID" : 763382c2-7c38-4d25-addd-1e35000a6662
-  },
-  {
-    "id" :8729ea00-4703-484c-9239-5bb840b34f7e,
-    "timestamp" : 0,02,
+    "id" :f58ea1f6-7406-4574-8d63-5beaecb7811e,
+    "timestamp" : 41,25904,
     "FireActivated" : True
   },
 
   {
-    "id" :8729ea00-4703-484c-9239-5bb840b34f7e,
-    "timestamp" : 83,32919,
+    "id" :f58ea1f6-7406-4574-8d63-5beaecb7811e,
+    "timestamp" : 44,54011,
+    "Hitter" : Fire
+  },
+  {
+    "id" :f58ea1f6-7406-4574-8d63-5beaecb7811e,
+    "timestamp" : 44,62027,
+    "Hitter" : Fire
+  },
+  {
+    "id" :f58ea1f6-7406-4574-8d63-5beaecb7811e,
+    "timestamp" : 44,70016,
+    "Hitter" : Fire
+  },
+
+  {
+    "id" :f58ea1f6-7406-4574-8d63-5beaecb7811e,
+    "timestamp" : 44,75911,
+    "Hitter" : Fire
+  },
+  {
+    "id" :f58ea1f6-7406-4574-8d63-5beaecb7811e,
+    "timestamp" : 44,84019,
+    "Hitter" : Fire
+  },
+  {
+    "id" :f58ea1f6-7406-4574-8d63-5beaecb7811e,
+    "timestamp" : 44,91994,
+    "Hitter" : Fire
+  },
+
+  {
+    "id" :f58ea1f6-7406-4574-8d63-5beaecb7811e,
+    "timestamp" : 44,97919,
+    "Hitter" : Fire
+  },
+  {
+    "id" :f58ea1f6-7406-4574-8d63-5beaecb7811e,
+    "timestamp" : 45,05922,
+    "Hitter" : Fire
+  },
+  {
+    "id" :f58ea1f6-7406-4574-8d63-5beaecb7811e,
+    "timestamp" : 45,13963,
+    "Hitter" : Fire
+  },
+
+  {
+    "id" :f58ea1f6-7406-4574-8d63-5beaecb7811e,
+    "timestamp" : 56,05919,
+    "FireActivated" : True
+  },
+  {
+    "id" :f58ea1f6-7406-4574-8d63-5beaecb7811e,
+    "timestamp" : 59,65985,
+    "Hitter" : Fire
+  },
+  {
+    "id" :f58ea1f6-7406-4574-8d63-5beaecb7811e,
+    "timestamp" : 59,7192,
+    "Hitter" : Fire
+  },
+
+  {
+    "id" :f58ea1f6-7406-4574-8d63-5beaecb7811e,
+    "timestamp" : 59,80037,
+    "Hitter" : Fire
+  },
+  {
+    "id" :f58ea1f6-7406-4574-8d63-5beaecb7811e,
+    "timestamp" : 59,86009,
+    "Hitter" : Fire
+  },
+  {
+    "id" :f58ea1f6-7406-4574-8d63-5beaecb7811e,
+    "timestamp" : 59,93911,
+    "Hitter" : Fire
+  },
+
+  {
+    "id" :f58ea1f6-7406-4574-8d63-5beaecb7811e,
+    "timestamp" : 60,01923,
+    "Hitter" : Fire
+  },
+  {
+    "id" :f58ea1f6-7406-4574-8d63-5beaecb7811e,
+    "timestamp" : 60,09899,
+    "Hitter" : Fire
+  },
+  {
+    "id" :f58ea1f6-7406-4574-8d63-5beaecb7811e,
+    "timestamp" : 60,15897,
+    "Hitter" : Fire
+  },
+
+  {
+    "id" :f58ea1f6-7406-4574-8d63-5beaecb7811e,
+    "timestamp" : 60,23963,
+    "Hitter" : Fire
+  },
+  {
+    "id" :f58ea1f6-7406-4574-8d63-5beaecb7811e,
+    "timestamp" : 63,73941,
+    "GameID" : 6e28a649-a331-4f47-a7b5-348e7a45e68c
+  },
+  {
+    "id" :f58ea1f6-7406-4574-8d63-5beaecb7811e,
+    "timestamp" : 63,73945,
+    "GameID" : 6e28a649-a331-4f47-a7b5-348e7a45e68c
+  },
+
+  {
+    "id" :f58ea1f6-7406-4574-8d63-5beaecb7811e,
+    "timestamp" : 75,23898,
+    "GameID" : 6e28a649-a331-4f47-a7b5-348e7a45e68c
+  },
+  {
+    "id" :f58ea1f6-7406-4574-8d63-5beaecb7811e,
+    "timestamp" : 92,45899,
+    "FireActivated" : True
+  },
+  {
+    "id" :f58ea1f6-7406-4574-8d63-5beaecb7811e,
+    "timestamp" : 94,59982,
+    "Type" : GameEnd
+  },
+
+  {
+    "id" :f58ea1f6-7406-4574-8d63-5beaecb7811e,
+    "timestamp" : 96,28999,
+    "Type" : GameStart
+  },
+  {
+    "id" :f58ea1f6-7406-4574-8d63-5beaecb7811e,
+    "timestamp" : 96,3319,
     "Type" : SessionStart
   },
   {
-    "id" :8729ea00-4703-484c-9239-5bb840b34f7e,
-    "timestamp" : 86,2549,
-    "Position X" : -8,
+    "id" :f58ea1f6-7406-4574-8d63-5beaecb7811e,
+    "timestamp" : 99,27272,
+    "Position X" : -10,
     "Position Y" : 5,
     "Position Z" : 10
   },
-  {
-    "id" :8729ea00-4703-484c-9239-5bb840b34f7e,
-    "timestamp" : 89,25662,
-    "Position X" : -12,
-    "Position Y" : 5,
-    "Position Z" : 15
-  },
 
   {
-    "id" :8729ea00-4703-484c-9239-5bb840b34f7e,
-    "timestamp" : 92,25847,
-    "Position X" : -9,
-    "Position Y" : 5,
-    "Position Z" : 17
-  },
-  {
-    "id" :8729ea00-4703-484c-9239-5bb840b34f7e,
-    "timestamp" : 93,76845,
+    "id" :f58ea1f6-7406-4574-8d63-5beaecb7811e,
+    "timestamp" : 100,2978,
     "Type" : SessionEnd
   },
 
