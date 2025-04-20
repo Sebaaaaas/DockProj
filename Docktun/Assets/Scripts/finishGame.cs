@@ -11,7 +11,7 @@ public class finishGame : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            TelemetriaDOC.Tracker.TrackEvent(new GameStateEvent(Time.realtimeSinceStartup, GameStateEvent.EventType.GameEnd));
+            Tracker.TrackEvent(new GameStateEvent(Time.realtimeSinceStartup, GameStateEvent.EventType.GameEnd));
             SceneManager.LoadScene("EndScene");
         }
     }

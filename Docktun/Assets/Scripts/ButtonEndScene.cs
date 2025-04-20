@@ -13,8 +13,9 @@ public class ButtonEndScene : MonoBehaviour
     }
     public void changeScene()
     {
-        TelemetriaDOC.Tracker.TrackEvent(new GameStateEvent(Time.realtimeSinceStartup,GameStateEvent.EventType.GameStart));
+        Tracker.TrackEvent(new GameStateEvent(Time.realtimeSinceStartup,GameStateEvent.EventType.GameStart));
         //Cambiar el ID del juego
+
         SceneManager.LoadScene("SampleScene");
     }
 }

@@ -30,6 +30,8 @@ public class GameManager : MonoBehaviour
         Debug.Log(TelemetriaDOC.Tracker.Init());
 
         Tracker.TrackEvent(new SessionEvent(Time.realtimeSinceStartup, SessionEvent.EventType.SessionStart));
+        Tracker.TrackEvent(new GameStateEvent(Time.realtimeSinceStartup, GameStateEvent.EventType.GameStart));
+
 
         DontDestroyOnLoad(instance);
     }
