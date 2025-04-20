@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
         gameID = System.Guid.NewGuid();
         Debug.Log(TelemetriaDOC.Tracker.Init());
 
-        Tracker.TrackEvent(new SessionEvent(Time.deltaTime, SessionEvent.EventType.SessionStart));
+        Tracker.TrackEvent(new SessionEvent(Time.realtimeSinceStartup, SessionEvent.EventType.SessionStart));
 
         DontDestroyOnLoad(instance);
     }
@@ -56,6 +56,12 @@ public class GameManager : MonoBehaviour
         Debug.Log("Ded");
         SceneManager.LoadScene("GameOver");
         //TelemetriaDOC.Tracker.
+    }
+
+    private void OnApplicationQuit()
+    {
+        Tracker.TrackEvent(new SessionEvent(Time.realtimeSinceStartup, SessionEvent.EventType.SessionEnd));
+        Tracker.closing();
     }
 
 }

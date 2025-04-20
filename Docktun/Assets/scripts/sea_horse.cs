@@ -68,7 +68,7 @@ public class sea_horse : MonoBehaviour
             if (hit.collider.CompareTag("Player") && !preheating && !emitFire)
             {
                 timer = timePreheating;
-                Tracker.TrackEvent(new FireActivatedEvent(Time.deltaTime));
+                Tracker.TrackEvent(new FireActivatedEvent(Time.realtimeSinceStartup));
                 StartCoroutine(PreheatAnimationCoroutine());
             }
         }

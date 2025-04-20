@@ -129,15 +129,15 @@ public class player_controller : MonoBehaviour
             timesSended++;
             //Guardar el timestampcon la posicion del jugador
             Tracker.TrackEvent(
-                new PositionEvent(Time.deltaTime, (int)transform.position.x, (int)transform.position.y, (int)transform.position.z));
+                new PositionEvent(Time.realtimeSinceStartup, (int)transform.position.x, (int)transform.position.y, (int)transform.position.z));
             Debug.Log("Pos sended");
         }
-        if (timesSended >= 5 && !closed)
+        /*if (timesSended >= 5 && !closed)
         {
             closed = true;
             Tracker.closing();
             Debug.Log("Closed");
-        }
+        }*/
     }
 
     private void turn(Vector3 direction)

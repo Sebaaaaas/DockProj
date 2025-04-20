@@ -26,7 +26,7 @@ public class target_open_door : MonoBehaviour
         {
             hittable = false;
 
-            Tracker.TrackEvent(new TargetHitEvent(Time.deltaTime, other.gameObject.tag));
+            Tracker.TrackEvent(new TargetHitEvent(Time.realtimeSinceStartup, other.gameObject.tag));
             
             eventEmitter.Play();
 
