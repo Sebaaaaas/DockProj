@@ -117,27 +117,7 @@ public class player_controller : MonoBehaviour
         // Move player
         if (!performingInstantAction)
             move(direction);
-
-        //##########################PRUEBA DE ENVÍO
-        if (timepassed < timetosend && timesSended < 5)
-        {
-            timepassed += Time.deltaTime;
-        }
-        else if (timesSended < 5)
-        {
-            timepassed = 0;
-            timesSended++;
-            //Guardar el timestampcon la posicion del jugador
-            Tracker.TrackEvent(
-                new PositionEvent(Time.realtimeSinceStartup, (int)transform.position.x, (int)transform.position.y, (int)transform.position.z));
-            Debug.Log("Pos sended");
-        }
-        /*if (timesSended >= 5 && !closed)
-        {
-            closed = true;
-            Tracker.closing();
-            Debug.Log("Closed");
-        }*/
+        
     }
 
     private void turn(Vector3 direction)

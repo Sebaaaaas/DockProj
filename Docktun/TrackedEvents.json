@@ -1,0 +1,24 @@
+[
+{"eventType" : SessionStart, "id" :b4c34595-87c9-4096-90f4-f1d1958ee0ad, "timestamp" : 2.122166},
+{"eventType" : Event, "id" :b4c34595-87c9-4096-90f4-f1d1958ee0ad, "timestamp" : 2.122477, "Type" : GameStart},
+{"eventType" : Puzzle1StartEvent, "id" :b4c34595-87c9-4096-90f4-f1d1958ee0ad, "timestamp" : 2.402013, "GameID" : 4b3605c1-8bef-4e84-8112-8d44e1686e26},
+
+{"eventType" : FireActivatedEvent, "id" :b4c34595-87c9-4096-90f4-f1d1958ee0ad, "timestamp" : 9.670691, "FireActivated" : True},
+{"eventType" : TargetHitEvent, "id" :b4c34595-87c9-4096-90f4-f1d1958ee0ad, "timestamp" : 12.67305, "Hitter" : Fire},
+{"eventType" : TargetHitEvent, "id" :b4c34595-87c9-4096-90f4-f1d1958ee0ad, "timestamp" : 12.793, "Hitter" : Fire},
+
+{"eventType" : TargetHitEvent, "id" :b4c34595-87c9-4096-90f4-f1d1958ee0ad, "timestamp" : 12.81302, "Hitter" : Fire},
+{"eventType" : TargetHitEvent, "id" :b4c34595-87c9-4096-90f4-f1d1958ee0ad, "timestamp" : 12.85218, "Hitter" : Fire},
+{"eventType" : TargetHitEvent, "id" :b4c34595-87c9-4096-90f4-f1d1958ee0ad, "timestamp" : 12.953, "Hitter" : Fire},
+
+{"eventType" : TargetHitEvent, "id" :b4c34595-87c9-4096-90f4-f1d1958ee0ad, "timestamp" : 12.97207, "Hitter" : Fire},
+{"eventType" : TargetHitEvent, "id" :b4c34595-87c9-4096-90f4-f1d1958ee0ad, "timestamp" : 13.09355, "Hitter" : Fire},
+{"eventType" : TargetHitEvent, "id" :b4c34595-87c9-4096-90f4-f1d1958ee0ad, "timestamp" : 13.19155, "Hitter" : Fire},
+
+{"eventType" : TargetHitEvent, "id" :b4c34595-87c9-4096-90f4-f1d1958ee0ad, "timestamp" : 13.333, "Hitter" : Fire},
+{"eventType" : Puzzle1EndEvent, "id" :b4c34595-87c9-4096-90f4-f1d1958ee0ad, "timestamp" : 16.13136, "GameID" : 4b3605c1-8bef-4e84-8112-8d44e1686e26},
+{"eventType" : Puzzle2StartEvent, "id" :b4c34595-87c9-4096-90f4-f1d1958ee0ad, "timestamp" : 16.13142, "GameID" : 4b3605c1-8bef-4e84-8112-8d44e1686e26},
+
+{"eventType" : Puzzle2EndEvent, "id" :b4c34595-87c9-4096-90f4-f1d1958ee0ad, "timestamp" : 23.39281, "GameID" : 4b3605c1-8bef-4e84-8112-8d44e1686e26},
+{"eventType" : SessionEnd, "id" :b4c34595-87c9-4096-90f4-f1d1958ee0ad, "timestamp" : 25.27785},
+
