@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using TelemetriaDOC;
 
 public class player_health : health
 {
@@ -49,7 +50,10 @@ public class player_health : health
                 hearts[i].sprite = emptyHeart;
 
             if (currentHealth <= 0)
-                GameManager.instance.OnPlayerDeath();            
+            {
+                Tracker.TrackEvent(new GameStateEvent(Time.realtimeSinceStartup, GameStateEvent.EventType.GameEnd, GameStateEvent.ResultType.Fail));
+                GameManager.instance.OnPlayerDeath();
+            }           
         }
     }
 

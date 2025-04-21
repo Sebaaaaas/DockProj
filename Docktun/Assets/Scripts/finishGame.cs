@@ -11,7 +11,7 @@ public class finishGame : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            Tracker.TrackEvent(new GameStateEvent(Time.realtimeSinceStartup, GameStateEvent.EventType.GameEnd));
+            Tracker.TrackEvent(new GameStateEvent(Time.realtimeSinceStartup, GameStateEvent.EventType.GameEnd, GameStateEvent.ResultType.Sucess));
             SceneManager.LoadScene("EndScene");
         }
     }

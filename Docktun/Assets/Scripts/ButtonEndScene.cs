@@ -13,7 +13,7 @@ public class ButtonEndScene : MonoBehaviour
     }
     public void changeScene()
     {
-        Tracker.TrackEvent(new GameStateEvent(Time.realtimeSinceStartup,GameStateEvent.EventType.GameStart));
+        Tracker.TrackEvent(new GameStateEvent(Time.realtimeSinceStartup,GameStateEvent.EventType.GameStart, GameStateEvent.ResultType.Sucess));
         //Cambiar el ID del juego
 
         SceneManager.LoadScene("SampleScene");

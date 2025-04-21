@@ -1,34 +1,32 @@
 [
-{"eventType":SessionStart, "id":152f2866-cd62-44cc-9d16-67f84c721c2c, "timestamp":1.279368},
-{"eventType":Event, "id":152f2866-cd62-44cc-9d16-67f84c721c2c, "timestamp":1.279563, "Type" : GameStart},
-{"eventType":Puzzle1StartEvent, "id":152f2866-cd62-44cc-9d16-67f84c721c2c, "timestamp":1.714833}
+{"eventType": "SessionStart", "id":"238cb882-0c75-4d00-94a3-1a6c760d5ffd", "timestamp":1.652003},
+{"eventType": "GameStart", "id":"238cb882-0c75-4d00-94a3-1a6c760d5ffd", "timestamp":1.65221},
+{"eventType": "Puzzle1StartEvent", "id":"238cb882-0c75-4d00-94a3-1a6c760d5ffd", "timestamp":1.94769}
 ,
-{"eventType":FireActivatedEvent, "id":152f2866-cd62-44cc-9d16-67f84c721c2c, "timestamp":4.69137},
-{"eventType":FireActivatedEvent, "id":152f2866-cd62-44cc-9d16-67f84c721c2c, "timestamp":23.59121},
-{"eventType":TargetHitEvent, "id":152f2866-cd62-44cc-9d16-67f84c721c2c, "timestamp":26.89214, "Hitter" : Fire}
+{"eventType": "FireActivatedEvent", "id":"238cb882-0c75-4d00-94a3-1a6c760d5ffd", "timestamp":6.854749},
+{"eventType": "FireActivatedEvent", "id":"238cb882-0c75-4d00-94a3-1a6c760d5ffd", "timestamp":11.27432},
+{"eventType": "TargetHitEvent", "id":"238cb882-0c75-4d00-94a3-1a6c760d5ffd", "timestamp":12.83639, "Hitter" : "Fire"}
 ,
-{"eventType":TargetHitEvent, "id":152f2866-cd62-44cc-9d16-67f84c721c2c, "timestamp":27.01061, "Hitter" : Fire},
-{"eventType":TargetHitEvent, "id":152f2866-cd62-44cc-9d16-67f84c721c2c, "timestamp":27.03144, "Hitter" : Fire},
-{"eventType":TargetHitEvent, "id":152f2866-cd62-44cc-9d16-67f84c721c2c, "timestamp":27.07152, "Hitter" : Fire}
+{"eventType": "TargetHitEvent", "id":"238cb882-0c75-4d00-94a3-1a6c760d5ffd", "timestamp":12.89448, "Hitter" : "Fire"},
+{"eventType": "TargetHitEvent", "id":"238cb882-0c75-4d00-94a3-1a6c760d5ffd", "timestamp":12.97614, "Hitter" : "Fire"},
+{"eventType": "TargetHitEvent", "id":"238cb882-0c75-4d00-94a3-1a6c760d5ffd", "timestamp":13.03536, "Hitter" : "Fire"}
 ,
-{"eventType":TargetHitEvent, "id":152f2866-cd62-44cc-9d16-67f84c721c2c, "timestamp":27.09181, "Hitter" : Fire},
-{"eventType":TargetHitEvent, "id":152f2866-cd62-44cc-9d16-67f84c721c2c, "timestamp":27.19052, "Hitter" : Fire},
-{"eventType":TargetHitEvent, "id":152f2866-cd62-44cc-9d16-67f84c721c2c, "timestamp":27.29157, "Hitter" : Fire}
+{"eventType": "TargetHitEvent", "id":"238cb882-0c75-4d00-94a3-1a6c760d5ffd", "timestamp":13.11454, "Hitter" : "Fire"},
+{"eventType": "TargetHitEvent", "id":"238cb882-0c75-4d00-94a3-1a6c760d5ffd", "timestamp":13.19459, "Hitter" : "Fire"},
+{"eventType": "TargetHitEvent", "id":"238cb882-0c75-4d00-94a3-1a6c760d5ffd", "timestamp":13.27631, "Hitter" : "Fire"}
 ,
-{"eventType":TargetHitEvent, "id":152f2866-cd62-44cc-9d16-67f84c721c2c, "timestamp":27.37097, "Hitter" : Fire},
-{"eventType":TargetHitEvent, "id":152f2866-cd62-44cc-9d16-67f84c721c2c, "timestamp":27.53181, "Hitter" : Fire},
-{"eventType":Puzzle1EndEvent, "id":152f2866-cd62-44cc-9d16-67f84c721c2c, "timestamp":30.29172}
+{"eventType": "TargetHitEvent", "id":"238cb882-0c75-4d00-94a3-1a6c760d5ffd", "timestamp":13.35424, "Hitter" : "Fire"},
+{"eventType": "TargetHitEvent", "id":"238cb882-0c75-4d00-94a3-1a6c760d5ffd", "timestamp":13.43439, "Hitter" : "Fire"},
+{"eventType": "FireActivatedEvent", "id":"238cb882-0c75-4d00-94a3-1a6c760d5ffd", "timestamp":20.5949}
 ,
-{"eventType":Puzzle2StartEvent, "id":152f2866-cd62-44cc-9d16-67f84c721c2c, "timestamp":30.29183},
-{"eventType":Puzzle2ResetEvent, "id":152f2866-cd62-44cc-9d16-67f84c721c2c, "timestamp":35.49088},
-{"eventType":Puzzle2ResetEvent, "id":152f2866-cd62-44cc-9d16-67f84c721c2c, "timestamp":41.13149}
+{"eventType": "GameEnd", "id":"238cb882-0c75-4d00-94a3-1a6c760d5ffd", "timestamp":24.15503, "RESULT": "FAIL"},
+{"eventType": "GameStart", "id":"238cb882-0c75-4d00-94a3-1a6c760d5ffd", "timestamp":25.85943},
+{"eventType": "SessionStart", "id":"238cb882-0c75-4d00-94a3-1a6c760d5ffd", "timestamp":25.89953}
 ,
-{"eventType":Puzzle2SuccessEvent, "id":152f2866-cd62-44cc-9d16-67f84c721c2c, "timestamp":49.89068},
-{"eventType":Puzzle2EndEvent, "id":152f2866-cd62-44cc-9d16-67f84c721c2c, "timestamp":49.89076},
-{"eventType":FireActivatedEvent, "id":152f2866-cd62-44cc-9d16-67f84c721c2c, "timestamp":67.25082}
-,
-{"eventType":Event, "id":152f2866-cd62-44cc-9d16-67f84c721c2c, "timestamp":69.8103, "Type" : GameEnd},
-{"eventType":SessionEnd, "id":152f2866-cd62-44cc-9d16-67f84c721c2c, "timestamp":71.79752}
+{"eventType": "GameStart", "id":"238cb882-0c75-4d00-94a3-1a6c760d5ffd", "timestamp":25.89956},
+{"eventType": "GameEnd", "id":"238cb882-0c75-4d00-94a3-1a6c760d5ffd", "timestamp":27.93314, "RESULT": "QUIT"},
+{"eventType": "SessionEnd", "id":"238cb882-0c75-4d00-94a3-1a6c760d5ffd", "timestamp":27.93316}
+
 
 ]
 

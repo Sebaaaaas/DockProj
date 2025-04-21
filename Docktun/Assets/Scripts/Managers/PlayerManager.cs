@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TelemetriaDOC;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -29,6 +30,7 @@ public class PlayerManager : MonoBehaviour
 
     private void OnDestroy()
     {
+        
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 }
