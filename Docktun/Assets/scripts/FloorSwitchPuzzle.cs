@@ -30,7 +30,7 @@ public class FloorSwitchPuzzle : MonoBehaviour
                 GetComponent<VCamActivation>().ActivateAttachedCamera();
                 doorToOpen.GetComponent<SlidingDoor>().changeDoorOpen();
                 Tracker.TrackEvent(new Puzzle2SuccessEvent(Time.realtimeSinceStartup));
-                Tracker.TrackEvent(new Puzzle2EndEvent(Time.realtimeSinceStartup, GameManager.instance.GetGameID()));
+                Tracker.TrackEvent(new Puzzle2EndEvent(Time.realtimeSinceStartup/*, GameManager.instance.GetGameID()*/));
             }
         }
         else // Incorrect activation, restart count

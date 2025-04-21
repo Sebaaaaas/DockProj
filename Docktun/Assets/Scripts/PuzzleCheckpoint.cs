@@ -17,8 +17,8 @@ public class PuzzleCheckpoint : MonoBehaviour
         if (other.gameObject.CompareTag("Player") && !triggered)
         {
             triggered = true;
-            Tracker.TrackEvent(new Puzzle1EndEvent(Time.realtimeSinceStartup, GameManager.instance.GetGameID()));
-            Tracker.TrackEvent(new Puzzle2StartEvent(Time.realtimeSinceStartup, GameManager.instance.GetGameID()));
+            Tracker.TrackEvent(new Puzzle1EndEvent(Time.realtimeSinceStartup/*, GameManager.instance.GetGameID()*/));
+            Tracker.TrackEvent(new Puzzle2StartEvent(Time.realtimeSinceStartup/*, GameManager.instance.GetGameID()*/));
         }
     }
 }

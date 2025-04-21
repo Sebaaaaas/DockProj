@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
 
         //Debug.Log(TelemetriaDOC.Tracker.Number(2,3));
         gameID = System.Guid.NewGuid();
-        Debug.Log(TelemetriaDOC.Tracker.Init());
+        Debug.Log(TelemetriaDOC.Tracker.Init(Format.JSON,Type.Disk,"TrackedEvents",3));
 
         Tracker.TrackEvent(new SessionEvent(Time.realtimeSinceStartup, SessionEvent.EventType.SessionStart));
         Tracker.TrackEvent(new GameStateEvent(Time.realtimeSinceStartup, GameStateEvent.EventType.GameStart));
@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        Tracker.TrackEvent(new Puzzle1StartEvent(Time.realtimeSinceStartup, GetGameID()));
+        Tracker.TrackEvent(new Puzzle1StartEvent(Time.realtimeSinceStartup/*, GetGameID()*/));
 
     }
 
