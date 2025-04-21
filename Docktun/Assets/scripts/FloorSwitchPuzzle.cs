@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TelemetriaDOC;
+using TelemetriaDOC.Events;
 using UnityEngine;
 
 public class FloorSwitchPuzzle : MonoBehaviour
@@ -28,7 +29,7 @@ public class FloorSwitchPuzzle : MonoBehaviour
             {
                 GetComponent<VCamActivation>().ActivateAttachedCamera();
                 doorToOpen.GetComponent<SlidingDoor>().changeDoorOpen();
-
+                Tracker.TrackEvent(new Puzzle2SuccessEvent(Time.realtimeSinceStartup));
                 Tracker.TrackEvent(new Puzzle2EndEvent(Time.realtimeSinceStartup, GameManager.instance.GetGameID()));
             }
         }
@@ -41,6 +42,7 @@ public class FloorSwitchPuzzle : MonoBehaviour
 
     private IEnumerator ResetPuzzleCoroutine()
     {
+        Tracker.TrackEvent(new Puzzle2ResetEvent(Time.realtimeSinceStartup));
         float timer = resetPuzzleTimer; // Wait before resetting puzzle
         while (timer > 0)
         {

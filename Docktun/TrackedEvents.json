@@ -1,24 +1,36 @@
 [
-{"eventType" : SessionStart, "id" :b4c34595-87c9-4096-90f4-f1d1958ee0ad, "timestamp" : 2.122166},
-{"eventType" : Event, "id" :b4c34595-87c9-4096-90f4-f1d1958ee0ad, "timestamp" : 2.122477, "Type" : GameStart},
-{"eventType" : Puzzle1StartEvent, "id" :b4c34595-87c9-4096-90f4-f1d1958ee0ad, "timestamp" : 2.402013, "GameID" : 4b3605c1-8bef-4e84-8112-8d44e1686e26},
+{"eventType":SessionStart, "id":f79ec216-482c-47dc-9894-bdd69f7d18bf, "timestamp":1.368068},
+{"eventType":Event, "id":f79ec216-482c-47dc-9894-bdd69f7d18bf, "timestamp":1.368268, "Type" : GameStart},
+{"eventType":Puzzle1StartEvent, "id":f79ec216-482c-47dc-9894-bdd69f7d18bf, "timestamp":1.810226, "GameID" : 8caa4b6a-184c-4e0b-9068-a42a205b4b7e}
+,
+{"eventType":FireActivatedEvent, "id":f79ec216-482c-47dc-9894-bdd69f7d18bf, "timestamp":14.88571, "FireActivated" : True},
+{"eventType":FireActivatedEvent, "id":f79ec216-482c-47dc-9894-bdd69f7d18bf, "timestamp":23.08578, "FireActivated" : True},
+{"eventType":TargetHitEvent, "id":f79ec216-482c-47dc-9894-bdd69f7d18bf, "timestamp":27.00588, "Hitter" : Fire}
+,
+{"eventType":TargetHitEvent, "id":f79ec216-482c-47dc-9894-bdd69f7d18bf, "timestamp":27.12617, "Hitter" : Fire},
+{"eventType":TargetHitEvent, "id":f79ec216-482c-47dc-9894-bdd69f7d18bf, "timestamp":27.14513, "Hitter" : Fire},
+{"eventType":TargetHitEvent, "id":f79ec216-482c-47dc-9894-bdd69f7d18bf, "timestamp":27.16556, "Hitter" : Fire}
+,
+{"eventType":TargetHitEvent, "id":f79ec216-482c-47dc-9894-bdd69f7d18bf, "timestamp":27.20684, "Hitter" : Fire},
+{"eventType":TargetHitEvent, "id":f79ec216-482c-47dc-9894-bdd69f7d18bf, "timestamp":27.30637, "Hitter" : Fire},
+{"eventType":TargetHitEvent, "id":f79ec216-482c-47dc-9894-bdd69f7d18bf, "timestamp":27.40564, "Hitter" : Fire}
+,
+{"eventType":TargetHitEvent, "id":f79ec216-482c-47dc-9894-bdd69f7d18bf, "timestamp":27.48539, "Hitter" : Fire},
+{"eventType":Puzzle1EndEvent, "id":f79ec216-482c-47dc-9894-bdd69f7d18bf, "timestamp":30.40565, "GameID" : 8caa4b6a-184c-4e0b-9068-a42a205b4b7e},
+{"eventType":Puzzle2StartEvent, "id":f79ec216-482c-47dc-9894-bdd69f7d18bf, "timestamp":30.4057, "GameID" : 8caa4b6a-184c-4e0b-9068-a42a205b4b7e}
+,
+{"eventType":Puzzle2ResetEvent, "id":f79ec216-482c-47dc-9894-bdd69f7d18bf, "timestamp":35.70638},
+{"eventType":Puzzle2ResetEvent, "id":f79ec216-482c-47dc-9894-bdd69f7d18bf, "timestamp":42.66508},
+{"eventType":Puzzle2ResetEvent, "id":f79ec216-482c-47dc-9894-bdd69f7d18bf, "timestamp":51.12529}
+,
+{"eventType":Puzzle2ResetEvent, "id":f79ec216-482c-47dc-9894-bdd69f7d18bf, "timestamp":58.00624},
+{"eventType":Puzzle2SuccessEvent, "id":f79ec216-482c-47dc-9894-bdd69f7d18bf, "timestamp":68.14526},
+{"eventType":Puzzle2EndEvent, "id":f79ec216-482c-47dc-9894-bdd69f7d18bf, "timestamp":68.14535, "GameID" : 8caa4b6a-184c-4e0b-9068-a42a205b4b7e}
+,
+{"eventType":FireActivatedEvent, "id":f79ec216-482c-47dc-9894-bdd69f7d18bf, "timestamp":84.14537, "FireActivated" : True},
+{"eventType":Event, "id":f79ec216-482c-47dc-9894-bdd69f7d18bf, "timestamp":87.2265, "Type" : GameEnd},
+{"eventType":SessionEnd, "id":f79ec216-482c-47dc-9894-bdd69f7d18bf, "timestamp":89.5304}
 
-{"eventType" : FireActivatedEvent, "id" :b4c34595-87c9-4096-90f4-f1d1958ee0ad, "timestamp" : 9.670691, "FireActivated" : True},
-{"eventType" : TargetHitEvent, "id" :b4c34595-87c9-4096-90f4-f1d1958ee0ad, "timestamp" : 12.67305, "Hitter" : Fire},
-{"eventType" : TargetHitEvent, "id" :b4c34595-87c9-4096-90f4-f1d1958ee0ad, "timestamp" : 12.793, "Hitter" : Fire},
 
-{"eventType" : TargetHitEvent, "id" :b4c34595-87c9-4096-90f4-f1d1958ee0ad, "timestamp" : 12.81302, "Hitter" : Fire},
-{"eventType" : TargetHitEvent, "id" :b4c34595-87c9-4096-90f4-f1d1958ee0ad, "timestamp" : 12.85218, "Hitter" : Fire},
-{"eventType" : TargetHitEvent, "id" :b4c34595-87c9-4096-90f4-f1d1958ee0ad, "timestamp" : 12.953, "Hitter" : Fire},
-
-{"eventType" : TargetHitEvent, "id" :b4c34595-87c9-4096-90f4-f1d1958ee0ad, "timestamp" : 12.97207, "Hitter" : Fire},
-{"eventType" : TargetHitEvent, "id" :b4c34595-87c9-4096-90f4-f1d1958ee0ad, "timestamp" : 13.09355, "Hitter" : Fire},
-{"eventType" : TargetHitEvent, "id" :b4c34595-87c9-4096-90f4-f1d1958ee0ad, "timestamp" : 13.19155, "Hitter" : Fire},
-
-{"eventType" : TargetHitEvent, "id" :b4c34595-87c9-4096-90f4-f1d1958ee0ad, "timestamp" : 13.333, "Hitter" : Fire},
-{"eventType" : Puzzle1EndEvent, "id" :b4c34595-87c9-4096-90f4-f1d1958ee0ad, "timestamp" : 16.13136, "GameID" : 4b3605c1-8bef-4e84-8112-8d44e1686e26},
-{"eventType" : Puzzle2StartEvent, "id" :b4c34595-87c9-4096-90f4-f1d1958ee0ad, "timestamp" : 16.13142, "GameID" : 4b3605c1-8bef-4e84-8112-8d44e1686e26},
-
-{"eventType" : Puzzle2EndEvent, "id" :b4c34595-87c9-4096-90f4-f1d1958ee0ad, "timestamp" : 23.39281, "GameID" : 4b3605c1-8bef-4e84-8112-8d44e1686e26},
-{"eventType" : SessionEnd, "id" :b4c34595-87c9-4096-90f4-f1d1958ee0ad, "timestamp" : 25.27785},
+]
 
