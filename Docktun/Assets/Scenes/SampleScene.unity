@@ -24772,7 +24772,7 @@ MonoBehaviour:
   doors:
   - {fileID: 1543529623}
   - {fileID: 596189612}
-  timeBetweenActivations: 0
+  timeBetweenActivations: 2
 --- !u!65 &1532941743
 BoxCollider:
   m_ObjectHideFlags: 0
