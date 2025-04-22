@@ -1,15 +1,15 @@
 [
-{"eventType": "SessionStart", "id":"76a2132f-4a4f-439e-8a9b-749a825be916", "timestamp":1.686147},
-{"eventType": "GameStart", "id":"76a2132f-4a4f-439e-8a9b-749a825be916", "timestamp":1.686368},
-{"eventType": "Puzzle1StartEvent", "id":"76a2132f-4a4f-439e-8a9b-749a825be916", "timestamp":1.977173},
-{"eventType": "FireActivatedEvent", "id":"76a2132f-4a4f-439e-8a9b-749a825be916", "timestamp":14.32717},
-{"eventType": "FireActivatedEvent", "id":"76a2132f-4a4f-439e-8a9b-749a825be916", "timestamp":19.20798},
-{"eventType": "FireActivatedEvent", "id":"76a2132f-4a4f-439e-8a9b-749a825be916", "timestamp":24.08708},
-{"eventType": "GameEnd", "id":"76a2132f-4a4f-439e-8a9b-749a825be916", "timestamp":25.50888, "RESULT": "FAIL"},
-{"eventType": "GameStart", "id":"76a2132f-4a4f-439e-8a9b-749a825be916", "timestamp":27.64122},
-{"eventType": "Puzzle1StartEvent", "id":"76a2132f-4a4f-439e-8a9b-749a825be916", "timestamp":27.64124},
-{"eventType": "GameEnd", "id":"76a2132f-4a4f-439e-8a9b-749a825be916", "timestamp":34.94066, "RESULT": "QUIT"},
-{"eventType": "SessionEnd", "id":"76a2132f-4a4f-439e-8a9b-749a825be916", "timestamp":34.94067}
+{"eventType": "SessionStart", "sessionID":"baa3e4bd-db6d-4e53-83c2-5bd00ee52dd2", "gameID":"0", "timestamp":1.975302},
+{"eventType": "GameStart", "sessionID":"baa3e4bd-db6d-4e53-83c2-5bd00ee52dd2", "gameID":"0", "timestamp":1.975623},
+{"eventType": "Puzzle1StartEvent", "sessionID":"baa3e4bd-db6d-4e53-83c2-5bd00ee52dd2", "gameID":"0", "timestamp":2.267875},
+{"eventType": "FireActivatedEvent", "sessionID":"baa3e4bd-db6d-4e53-83c2-5bd00ee52dd2", "gameID":"0", "timestamp":20.38564},
+{"eventType": "FireActivatedEvent", "sessionID":"baa3e4bd-db6d-4e53-83c2-5bd00ee52dd2", "gameID":"0", "timestamp":24.12569},
+{"eventType": "FireActivatedEvent", "sessionID":"baa3e4bd-db6d-4e53-83c2-5bd00ee52dd2", "gameID":"0", "timestamp":27.9065},
+{"eventType": "GameEnd", "sessionID":"baa3e4bd-db6d-4e53-83c2-5bd00ee52dd2", "gameID":"0", "timestamp":30.50649, "RESULT": "FAIL"},
+{"eventType": "GameStart", "sessionID":"baa3e4bd-db6d-4e53-83c2-5bd00ee52dd2", "gameID":"1", "timestamp":32.52493},
+{"eventType": "Puzzle1StartEvent", "sessionID":"baa3e4bd-db6d-4e53-83c2-5bd00ee52dd2", "gameID":"1", "timestamp":32.52494},
+{"eventType": "GameEnd", "sessionID":"baa3e4bd-db6d-4e53-83c2-5bd00ee52dd2", "gameID":"1", "timestamp":34.91697, "RESULT": "QUIT"},
+{"eventType": "SessionEnd", "sessionID":"baa3e4bd-db6d-4e53-83c2-5bd00ee52dd2", "gameID":"1", "timestamp":34.91698}
 
 ]
 

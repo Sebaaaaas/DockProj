@@ -11,8 +11,6 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    System.Guid gameID;
-
     private void Awake()
     {
        
@@ -27,29 +25,18 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(instance.gameObject);
         }
 
-        gameID = System.Guid.NewGuid();
         Tracker.Init(Format.JSON, Type.Disk, "TrackedEvents", 20);
 
 
         Tracker.TrackEvent(new SessionEvent(Time.realtimeSinceStartup, SessionEvent.EventType.SessionStart));
         Tracker.TrackEvent(new GameStateEvent(Time.realtimeSinceStartup, GameStateEvent.EventType.GameStart, GameStateEvent.ResultType.Sucess));
-
-       
-
-
-
     }
     
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        Tracker.TrackEvent(new Puzzle1StartEvent(Time.realtimeSinceStartup/*, GetGameID()*/));
+        Tracker.TrackEvent(new Puzzle1StartEvent(Time.realtimeSinceStartup));
 
-    }
-
-    public System.Guid GetGameID()
-    {
-        return gameID;
     }
 
     public void OnPlayerDeath()
