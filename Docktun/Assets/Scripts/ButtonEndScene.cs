@@ -14,6 +14,7 @@ public class ButtonEndScene : MonoBehaviour
     public void changeScene()
     {
         Tracker.TrackEvent(new GameStateEvent(Time.realtimeSinceStartup,GameStateEvent.EventType.GameStart, GameStateEvent.ResultType.Sucess));
+        Tracker.TrackEvent(new Puzzle1StartEvent(Time.realtimeSinceStartup/*, GetGameID()*/));
         //Cambiar el ID del juego
 
         SceneManager.LoadScene("SampleScene");
