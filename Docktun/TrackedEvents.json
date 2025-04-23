@@ -1,16 +1,11 @@
 [
-{"eventType": "SessionStart", "sessionID":"dc1912a7-b07c-4895-930b-dcc203f7ef32", "gameID":"0", "timestamp":1745424465022},
-{"eventType": "GameStart", "sessionID":"dc1912a7-b07c-4895-930b-dcc203f7ef32", "gameID":"0", "timestamp":1745424465023}
-,
-{"eventType": "Puzzle1StartEvent", "sessionID":"dc1912a7-b07c-4895-930b-dcc203f7ef32", "gameID":"0", "timestamp":1745424465298}
-,
-{"eventType": "PlayerAttackEvent", "sessionID":"dc1912a7-b07c-4895-930b-dcc203f7ef32", "gameID":"0", "timestamp":1745424471592},
-{"eventType": "PlayerAttackEvent", "sessionID":"dc1912a7-b07c-4895-930b-dcc203f7ef32", "gameID":"0", "timestamp":1745424471899},
-{"eventType": "PlayerAttackEvent", "sessionID":"dc1912a7-b07c-4895-930b-dcc203f7ef32", "gameID":"0", "timestamp":1745424472205},
-{"eventType": "FireActivatedEvent", "sessionID":"dc1912a7-b07c-4895-930b-dcc203f7ef32", "gameID":"0", "timestamp":1745424472495},
-{"eventType": "PlayerAttackEvent", "sessionID":"dc1912a7-b07c-4895-930b-dcc203f7ef32", "gameID":"0", "timestamp":1745424472513},
-{"eventType": "PlayerAttackEvent", "sessionID":"dc1912a7-b07c-4895-930b-dcc203f7ef32", "gameID":"0", "timestamp":1745424472859},
-{"eventType": "PlayerAttackEvent", "sessionID":"dc1912a7-b07c-4895-930b-dcc203f7ef32", "gameID":"0", "timestamp":1745424473165}
-
+{"eventType": "SessionStart", "sessionID":"96dddc84-09d7-4ef6-a25d-68db80d2bd8d", "gameID":"0", "timestamp":1745426833539},
+{"eventType": "GameStart", "sessionID":"96dddc84-09d7-4ef6-a25d-68db80d2bd8d", "gameID":"0", "timestamp":1745426833540},
+{"eventType": "Puzzle1StartEvent", "sessionID":"96dddc84-09d7-4ef6-a25d-68db80d2bd8d", "gameID":"0", "timestamp":1745426833796},
+{"eventType": "PlayerAttackEvent", "sessionID":"96dddc84-09d7-4ef6-a25d-68db80d2bd8d", "gameID":"0", "timestamp":1745426838829},
+{"eventType": "PlayerAttackEvent", "sessionID":"96dddc84-09d7-4ef6-a25d-68db80d2bd8d", "gameID":"0", "timestamp":1745426839516},
+{"eventType": "FireActivatedEvent", "sessionID":"96dddc84-09d7-4ef6-a25d-68db80d2bd8d", "gameID":"0", "timestamp":1745426841377},
+{"eventType": "TargetHitEvent", "sessionID":"96dddc84-09d7-4ef6-a25d-68db80d2bd8d", "gameID":"0", "timestamp":1745426844106, "Hitter" : "Fire"},
+{"eventType": "GameEnd", "sessionID":"96dddc84-09d7-4ef6-a25d-68db80d2bd8d", "gameID":"0", "timestamp":1745426865193, "RESULT": "QUIT"},
+{"eventType": "SessionEnd", "sessionID":"96dddc84-09d7-4ef6-a25d-68db80d2bd8d", "gameID":"0", "timestamp":1745426865193}
 ]
-
