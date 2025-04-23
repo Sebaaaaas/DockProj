@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        Tracker.TrackEvent(new Puzzle1StartEvent(Time.realtimeSinceStartup));
+       // Tracker.TrackEvent(new Puzzle1StartEvent(Time.realtimeSinceStartup));
 
     }
 
@@ -51,6 +51,24 @@ public class GameManager : MonoBehaviour
         Tracker.TrackEvent(new GameStateEvent(Time.realtimeSinceStartup, GameStateEvent.EventType.GameEnd, GameStateEvent.ResultType.Quit));
         Tracker.TrackEvent(new SessionEvent(Time.realtimeSinceStartup, SessionEvent.EventType.SessionEnd));
         Tracker.Closing();
+    }
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "SampleScene")
+        {
+            Tracker.TrackEvent(new Puzzle1StartEvent(Time.realtimeSinceStartup));
+        }
     }
 
 }
