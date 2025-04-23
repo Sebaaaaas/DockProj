@@ -25,8 +25,7 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(instance.gameObject);
         }
 
-        Tracker.Init(Format.JSON, Type.Disk, "TrackedEvents", 20);
-
+        Tracker.Init(Format.JSON, Type.Disk, "TrackedEvents", 20, 5000);
 
         Tracker.TrackEvent(new SessionEvent(SessionEvent.EventType.SessionStart));
         Tracker.TrackEvent(new GameStateEvent(GameStateEvent.EventType.GameStart, GameStateEvent.ResultType.Sucess));
@@ -35,15 +34,12 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-       // Tracker.TrackEvent(new Puzzle1StartEvent(Time.realtimeSinceStartup));
-
     }
 
     public void OnPlayerDeath()
     {
         Debug.Log("Ded");
         SceneManager.LoadScene("GameOver");
-        //TelemetriaDOC.Tracker.
     }
 
     private void OnApplicationQuit()
