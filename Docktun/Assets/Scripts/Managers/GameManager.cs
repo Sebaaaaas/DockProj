@@ -28,8 +28,8 @@ public class GameManager : MonoBehaviour
         Tracker.Init(Format.JSON, Type.Disk, "TrackedEvents", 20);
 
 
-        Tracker.TrackEvent(new SessionEvent(Time.realtimeSinceStartup, SessionEvent.EventType.SessionStart));
-        Tracker.TrackEvent(new GameStateEvent(Time.realtimeSinceStartup, GameStateEvent.EventType.GameStart, GameStateEvent.ResultType.Sucess));
+        Tracker.TrackEvent(new SessionEvent(SessionEvent.EventType.SessionStart));
+        Tracker.TrackEvent(new GameStateEvent(GameStateEvent.EventType.GameStart, GameStateEvent.ResultType.Sucess));
     }
     
     void Start()
@@ -48,8 +48,8 @@ public class GameManager : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        Tracker.TrackEvent(new GameStateEvent(Time.realtimeSinceStartup, GameStateEvent.EventType.GameEnd, GameStateEvent.ResultType.Quit));
-        Tracker.TrackEvent(new SessionEvent(Time.realtimeSinceStartup, SessionEvent.EventType.SessionEnd));
+        Tracker.TrackEvent(new GameStateEvent(GameStateEvent.EventType.GameEnd, GameStateEvent.ResultType.Quit));
+        Tracker.TrackEvent(new SessionEvent(SessionEvent.EventType.SessionEnd));
         Tracker.Closing();
     }
 
@@ -67,7 +67,7 @@ public class GameManager : MonoBehaviour
     {
         if (scene.name == "SampleScene")
         {
-            Tracker.TrackEvent(new Puzzle1StartEvent(Time.realtimeSinceStartup));
+            Tracker.TrackEvent(new Puzzle1StartEvent());
         }
     }
 

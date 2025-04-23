@@ -1,6 +1,5 @@
 using FMODUnity;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TelemetriaDOC;
 
@@ -26,7 +25,7 @@ public class target_open_door : MonoBehaviour
         {
             hittable = false;
 
-            Tracker.TrackEvent(new TargetHitEvent(Time.realtimeSinceStartup, other.gameObject.tag));
+            Tracker.TrackEvent(new TargetHitEvent(other.gameObject.tag));
             
             eventEmitter.Play();
 

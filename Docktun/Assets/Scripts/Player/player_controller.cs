@@ -96,7 +96,7 @@ public class player_controller : MonoBehaviour
 
             if(currentAction == InstantActions.ATTACK)
             {
-                Tracker.TrackEvent(new PlayerAttackEvent(Time.realtimeSinceStartup));
+                Tracker.TrackEvent(new PlayerAttackEvent());
                 StartCoroutine(AttackCoroutine());
             }
         }

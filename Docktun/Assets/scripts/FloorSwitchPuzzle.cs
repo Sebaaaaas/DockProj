@@ -29,8 +29,8 @@ public class FloorSwitchPuzzle : MonoBehaviour
             {
                 GetComponent<VCamActivation>().ActivateAttachedCamera();
                 doorToOpen.GetComponent<SlidingDoor>().changeDoorOpen();
-                Tracker.TrackEvent(new Puzzle2SuccessEvent(Time.realtimeSinceStartup));
-                Tracker.TrackEvent(new Puzzle2EndEvent(Time.realtimeSinceStartup/*, GameManager.instance.GetGameID()*/));
+                Tracker.TrackEvent(new Puzzle2SuccessEvent());
+                Tracker.TrackEvent(new Puzzle2EndEvent());
             }
         }
         else // Incorrect activation, restart count
@@ -42,7 +42,7 @@ public class FloorSwitchPuzzle : MonoBehaviour
 
     private IEnumerator ResetPuzzleCoroutine()
     {
-        Tracker.TrackEvent(new Puzzle2ResetEvent(Time.realtimeSinceStartup));
+        Tracker.TrackEvent(new Puzzle2ResetEvent());
         float timer = resetPuzzleTimer; // Wait before resetting puzzle
         while (timer > 0)
         {

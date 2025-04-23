@@ -51,7 +51,7 @@ public class player_health : health
 
             if (currentHealth <= 0)
             {
-                Tracker.TrackEvent(new GameStateEvent(Time.realtimeSinceStartup, GameStateEvent.EventType.GameEnd, GameStateEvent.ResultType.Fail));
+                Tracker.TrackEvent(new GameStateEvent(GameStateEvent.EventType.GameEnd, GameStateEvent.ResultType.Fail));
                 GameManager.instance.OnPlayerDeath();
             }           
         }

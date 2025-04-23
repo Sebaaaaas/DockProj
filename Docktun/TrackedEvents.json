@@ -1,0 +1,15 @@
+[
+{"eventType": "SessionStart", "sessionID":"72fbfe6d-2ce4-41af-8ca7-b71590783b42", "gameID":"0", "timestamp":1745419533041},
+{"eventType": "GameStart", "sessionID":"72fbfe6d-2ce4-41af-8ca7-b71590783b42", "gameID":"0", "timestamp":1745419533042},
+{"eventType": "Puzzle1StartEvent", "sessionID":"72fbfe6d-2ce4-41af-8ca7-b71590783b42", "gameID":"0", "timestamp":1745419533317},
+{"eventType": "FireActivatedEvent", "sessionID":"72fbfe6d-2ce4-41af-8ca7-b71590783b42", "gameID":"0", "timestamp":1745419537348},
+{"eventType": "FireActivatedEvent", "sessionID":"72fbfe6d-2ce4-41af-8ca7-b71590783b42", "gameID":"0", "timestamp":1745419541965},
+{"eventType": "TargetHitEvent", "sessionID":"72fbfe6d-2ce4-41af-8ca7-b71590783b42", "gameID":"0", "timestamp":1745419544828, "Hitter" : "Fire"},
+{"eventType": "GameEnd", "sessionID":"72fbfe6d-2ce4-41af-8ca7-b71590783b42", "gameID":"0", "timestamp":1745419561265, "RESULT": "SUCCESS"},
+{"eventType": "GameStart", "sessionID":"72fbfe6d-2ce4-41af-8ca7-b71590783b42", "gameID":"1", "timestamp":1745419564512},
+{"eventType": "Puzzle1StartEvent", "sessionID":"72fbfe6d-2ce4-41af-8ca7-b71590783b42", "gameID":"1", "timestamp":1745419564710},
+{"eventType": "GameEnd", "sessionID":"72fbfe6d-2ce4-41af-8ca7-b71590783b42", "gameID":"1", "timestamp":1745419566362, "RESULT": "QUIT"},
+{"eventType": "SessionEnd", "sessionID":"72fbfe6d-2ce4-41af-8ca7-b71590783b42", "gameID":"1", "timestamp":1745419566362}
+
+]
+
