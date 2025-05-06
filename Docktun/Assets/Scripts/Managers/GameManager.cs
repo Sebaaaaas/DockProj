@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 using System.Runtime.InteropServices;
 using TelemetriaDOC;
+using DaltonismoHWHAP;
 
 public class GameManager : MonoBehaviour
 {
@@ -29,11 +30,16 @@ public class GameManager : MonoBehaviour
 
         Tracker.TrackEvent(new SessionEvent(SessionEvent.EventType.SessionStart));
         Tracker.TrackEvent(new GameStateEvent(GameStateEvent.EventType.GameStart, GameStateEvent.ResultType.Sucess));
+
+        DTMain.Init();
     }
     
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+
+        DTMain.captureScreen();
+
     }
 
     public void OnPlayerDeath()
