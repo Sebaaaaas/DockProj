@@ -1,6 +1,6 @@
 [
-{"eventType": "SessionStart", "sessionID":"9582cba0-7bde-492a-a893-8d6a2daa4fad", "gameID":"0", "timestamp":1746717034793},
-{"eventType": "GameStart", "sessionID":"9582cba0-7bde-492a-a893-8d6a2daa4fad", "gameID":"0", "timestamp":1746717034794},
-{"eventType": "GameEnd", "sessionID":"9582cba0-7bde-492a-a893-8d6a2daa4fad", "gameID":"0", "timestamp":1746717047942, "RESULT": "QUIT"},
-{"eventType": "SessionEnd", "sessionID":"9582cba0-7bde-492a-a893-8d6a2daa4fad", "gameID":"0", "timestamp":1746717047942}
+{"eventType": "SessionStart", "sessionID":"a259259f-e127-4fbf-a992-1df3600104b7", "gameID":"0", "timestamp":1746742622447},
+{"eventType": "GameStart", "sessionID":"a259259f-e127-4fbf-a992-1df3600104b7", "gameID":"0", "timestamp":1746742622448},
+{"eventType": "GameEnd", "sessionID":"a259259f-e127-4fbf-a992-1df3600104b7", "gameID":"0", "timestamp":1746742807389, "RESULT": "QUIT"},
+{"eventType": "SessionEnd", "sessionID":"a259259f-e127-4fbf-a992-1df3600104b7", "gameID":"0", "timestamp":1746742807389}
 ]
