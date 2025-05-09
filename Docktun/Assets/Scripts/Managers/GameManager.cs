@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
     
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
 
         DTMain.captureScreen();
 
@@ -53,6 +53,7 @@ public class GameManager : MonoBehaviour
         Tracker.TrackEvent(new GameStateEvent(GameStateEvent.EventType.GameEnd, GameStateEvent.ResultType.Quit));
         Tracker.TrackEvent(new SessionEvent(SessionEvent.EventType.SessionEnd));
         Tracker.Closing();
+        DTMain.writeToFile();
     }
 
     private void OnEnable()

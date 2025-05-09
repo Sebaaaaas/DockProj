@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using TelemetriaDOC;
+using DaltonismoHWHAP;
 
 public class player_controller : MonoBehaviour
 {
@@ -117,7 +118,13 @@ public class player_controller : MonoBehaviour
         // Move player
         if (!performingInstantAction)
             move(direction);
-        
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            DTMain.addPos(transform.position.x, transform.position.y, transform.position.z);
+            Debug.Log("Pos creada");
+            Debug.Log(transform.position.x+"\n"+transform.position.y +"\n"+ transform.position.z);
+        }
     }
 
     private void turn(Vector3 direction)
