@@ -11,6 +11,7 @@ using DaltonismoHWHAP;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    private List<Vector3> tpPoints = new List<Vector3>();
 
     private void Awake()
     {
@@ -38,8 +39,20 @@ public class GameManager : MonoBehaviour
     {
         //Cursor.lockState = CursorLockMode.Locked;
 
-        DTMain.captureScreen();
-
+        //DTMain.captureScreen();
+        bool lee = DTMain.readFromFile();
+        Debug.Log(lee);
+        if (lee)
+        {
+            int tam = DTMain.listSize();
+            for (int i = 0; i < tam; i++)
+            {
+                tpPoints.Add(new Vector3(DTMain.returnValOfList(i)._x, DTMain.returnValOfList(i)._y, DTMain.returnValOfList(i)._z));
+            }
+            Debug.Log(tpPoints.Count);
+        }
+        
+        
     }
 
     public void OnPlayerDeath()
