@@ -87,4 +87,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public List<Vector3> getTPList()
+    {
+        return tpPoints;
+    }
+
+    public Vector3 getTPpoint(int index)
+    {
+        return tpPoints[index];
+    }
+
 }

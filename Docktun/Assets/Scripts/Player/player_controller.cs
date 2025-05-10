@@ -43,6 +43,9 @@ public class player_controller : MonoBehaviour
     int timesSended = 0;
     bool closed = false;
 
+    int k = 0;
+    
+
     void Start()
     {        
         character_controller = GetComponent<CharacterController>();
@@ -124,6 +127,21 @@ public class player_controller : MonoBehaviour
             DTMain.addPos(transform.position.x, transform.position.y, transform.position.z);
             Debug.Log("Pos creada");
             Debug.Log(transform.position.x+"\n"+transform.position.y +"\n"+ transform.position.z);
+            Debug.Log(DTMain.listSize());
+        }
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            transform.SetPositionAndRotation(GameManager.instance.getTPpoint(k), transform.rotation);
+            Debug.Log("Tepea a: " + transform.position);
+            if (k+1 < GameManager.instance.getTPList().Count)
+            {
+                
+                k++;
+            }
+            else
+            {
+                k = 0;
+            }
         }
     }
 
