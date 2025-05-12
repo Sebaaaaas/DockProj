@@ -44,6 +44,8 @@ public class player_controller : MonoBehaviour
     bool closed = false;
 
     int k = 0;
+
+    bool tepeado=false;
     
 
     void Start()
@@ -129,21 +131,35 @@ public class player_controller : MonoBehaviour
             Debug.Log(transform.position.x+"\n"+transform.position.y +"\n"+ transform.position.z);
             Debug.Log(DTMain.listSize());
         }
+
+        if (tepeado)
+        {
+            Debug.Log("Estoy en: " + transform.position);
+            tepeado = false;
+        }
+
         if (Input.GetKeyDown(KeyCode.O))
         {
-            transform.SetPositionAndRotation(GameManager.instance.getTPpoint(k), transform.rotation);
+            GetComponent<CharacterController>().enabled = false;
+            transform.position = GameManager.instance.getTPpoint(k);
             Debug.Log("Tepea a: " + transform.position);
-            if (k+1 < GameManager.instance.getTPList().Count)
+
+            if (k + 1 < GameManager.instance.getTPList().Count)
             {
-                
+
                 k++;
             }
             else
             {
                 k = 0;
             }
+            tepeado = true;
+            GetComponent<CharacterController>().enabled = true;
         }
+
     }
+
+   
 
     private void turn(Vector3 direction)
     {       
