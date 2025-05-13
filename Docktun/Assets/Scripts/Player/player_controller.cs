@@ -130,6 +130,7 @@ public class player_controller : MonoBehaviour
             Debug.Log("Pos creada");
             Debug.Log(transform.position.x+"\n"+transform.position.y +"\n"+ transform.position.z);
             Debug.Log(DTMain.listSize());
+            GameManager.instance.captureImage();
         }
 
         if (tepeado)

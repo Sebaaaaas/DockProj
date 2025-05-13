@@ -40,6 +40,8 @@ public class GameManager : MonoBehaviour
         //Cursor.lockState = CursorLockMode.Locked;
 
         //DTMain.captureScreen();
+        StartCoroutine(captureImage());
+
         bool lee = DTMain.readFromFile();
         Debug.Log(lee);
         if (lee)
@@ -97,4 +99,22 @@ public class GameManager : MonoBehaviour
         return tpPoints[index];
     }
 
+    public System.Collections.IEnumerator captureImage()
+    {
+        yield return new WaitForEndOfFrame();
+
+        // Capturar pantalla del juego
+        int width = Screen.width;
+        int height = Screen.height;
+        Texture2D tex = new Texture2D(width, height, TextureFormat.RGB24, false);
+        tex.ReadPixels(new Rect(0, 0, width, height), 0, 0);
+        tex.Apply();
+
+        // Convertir a PNG (byte[])
+        byte[] pngData = tex.EncodeToPNG();
+        Destroy(tex); // liberar memoria
+
+        // Enviar a la DLL
+        DTMain.captureScreen(pngData, pngData.Length);
+    }
 }
