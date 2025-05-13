@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     private List<Vector3> tpPoints = new List<Vector3>();
+    public ComputeShader colorblindnessFilters;
 
     private void Awake()
     {
@@ -37,6 +38,8 @@ public class GameManager : MonoBehaviour
     
     void Start()
     {
+       
+
         //Cursor.lockState = CursorLockMode.Locked;
 
         //DTMain.captureScreen();
@@ -55,6 +58,17 @@ public class GameManager : MonoBehaviour
         }
         
         
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            RenderTexture screenTexture = new RenderTexture(Screen.width, Screen.height, 0);
+            ScreenCapture.CaptureScreenshotIntoRenderTexture(screenTexture);
+            DTMain.SetColorBlindnessComputeShaders(colorblindnessFilters);
+            DTMain.ProcessImageOnGPU(screenTexture);
+            Debug.Log("GPU");
+        }
     }
 
     public void OnPlayerDeath()
