@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: ../DocktunFMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638750865790494418
+  lastModified: 638822324383257963
   FileSizes:
   - Name: Desktop
     Value: 250048
@@ -62,7 +62,7 @@ MonoBehaviour:
   Path: ../DocktunFMOD/Build/Desktop/BackgroundSounds.bank
   Name: BackgroundSounds
   StudioPath: bank:/BackgroundSounds
-  lastModified: 638746271834581481
+  lastModified: 638822324383237963
   FileSizes:
   - Name: Desktop
     Value: 566304
@@ -120,7 +120,7 @@ MonoBehaviour:
   - {fileID: -8835175197276409736}
   StringsBanks:
   - {fileID: 8564582703305426384}
-  cacheTime: 638750865790516146
+  cacheTime: 638822324383257963
   cacheVersion: 131619
 --- !u!114 &7001959513051863746
 MonoBehaviour:
@@ -164,7 +164,7 @@ MonoBehaviour:
   Path: ../DocktunFMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638750865790516146
+  lastModified: 638822324383257963
   FileSizes:
   - Name: Desktop
     Value: 940
