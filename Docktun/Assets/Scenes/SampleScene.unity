@@ -890,6 +890,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6864651d82bb5148966cc15688ef0d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colorblindnessFilters: {fileID: 7200000, guid: 197e9e8ae3b91714088cb44e480ddd58, type: 3}
 --- !u!114 &126791038
 MonoBehaviour:
   m_ObjectHideFlags: 0
