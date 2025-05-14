@@ -8,15 +8,30 @@ using System.Runtime.InteropServices;
 using TelemetriaDOC;
 using DaltonismoHWHAP;
 
+
+
+
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     private List<Vector3> tpPoints = new List<Vector3>();
     public ComputeShader colorblindnessFilters;
 
+
+    [Header("Filtros de daltonismo")]
+    public bool Protanopia;
+    public bool Protanomalia;
+    public bool Deuteranopia;
+    public bool Deuteranomalia;
+    public bool Tritanopia;
+    public bool Tritanomalia;
+    public bool Acromatopia;
+    public bool Acromatomalia;
+
+
+
     private void Awake()
     {
-       
         if (instance != null && instance != this)
         {
             Destroy(gameObject);
@@ -42,7 +57,6 @@ public class GameManager : MonoBehaviour
 
         //Cursor.lockState = CursorLockMode.Locked;
 
-        //DTMain.captureScreen();
         StartCoroutine(captureImage());
 
         bool lee = DTMain.readFromFile();
@@ -128,7 +142,21 @@ public class GameManager : MonoBehaviour
         byte[] pngData = tex.EncodeToPNG();
         Destroy(tex); // liberar memoria
 
+        //decidir que filtros se van a usar
+        Dictionary<string, bool> filtros = new()
+        {
+            { "Protanopia", this.Protanopia },
+            { "Protanomalia", this.Protanomalia },
+            { "Deuteranopia", this.Deuteranopia },
+            { "Deuteranomalia", this.Deuteranomalia },
+            { "Tritanopia", this.Tritanopia },
+            { "Tritanomalia", this.Tritanomalia },
+            { "Acromatopia", this.Acromatopia },
+            { "Acromatomalia", this.Acromatomalia }
+        };
+
+
         // Enviar a la DLL
-        DTMain.captureScreen(pngData, pngData.Length);
+        DTMain.captureScreen(pngData, pngData.Length, filtros);
     }
 }
