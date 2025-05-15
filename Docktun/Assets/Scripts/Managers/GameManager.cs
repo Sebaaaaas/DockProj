@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour
             RenderTexture screenTexture = new RenderTexture(Screen.width, Screen.height, 0);
             ScreenCapture.CaptureScreenshotIntoRenderTexture(screenTexture);
             DTMain.SetColorBlindnessComputeShaders(colorblindnessFilters);
-            DTMain.ProcessImageOnGPU(screenTexture);
+            for (int i = 0; i < 8; i++) DTMain.ProcessImageOnGPU(screenTexture, i);
             Debug.Log("GPU");
         }
     }
