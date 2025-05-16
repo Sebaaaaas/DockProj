@@ -1,0 +1,6 @@
+[
+{"eventType": "SessionStart", "sessionID":"44567c7a-022c-4a0a-a101-8a93ec87141d", "gameID":"0", "timestamp":1747412258754},
+{"eventType": "GameStart", "sessionID":"44567c7a-022c-4a0a-a101-8a93ec87141d", "gameID":"0", "timestamp":1747412258754},
+{"eventType": "GameEnd", "sessionID":"44567c7a-022c-4a0a-a101-8a93ec87141d", "gameID":"0", "timestamp":1747412355353, "RESULT": "QUIT"},
+{"eventType": "SessionEnd", "sessionID":"44567c7a-022c-4a0a-a101-8a93ec87141d", "gameID":"0", "timestamp":1747412355353}
+]

@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     private List<Vector3> tpPoints = new List<Vector3>();
     public ComputeShader colorblindnessFilters;
 
+    public float gravedadDalt = 1;
+
 
     [Header("Filtros de daltonismo")]
     public bool Protanopia;
@@ -48,7 +50,7 @@ public class GameManager : MonoBehaviour
         Tracker.TrackEvent(new SessionEvent(SessionEvent.EventType.SessionStart));
         Tracker.TrackEvent(new GameStateEvent(GameStateEvent.EventType.GameStart, GameStateEvent.ResultType.Sucess));
 
-        DTMain.Init();
+        DTMain.Init(gravedadDalt);
     }
     
     void Start()
