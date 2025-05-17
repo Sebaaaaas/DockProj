@@ -165,6 +165,7 @@ public class player_controller : MonoBehaviour
         {
             DTMain.ClearList();
             GameManager.instance.clearList();
+            k = 0;
         }
     }
 
