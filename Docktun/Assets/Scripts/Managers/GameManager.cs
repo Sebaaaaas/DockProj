@@ -56,10 +56,9 @@ public class GameManager : MonoBehaviour
     void Start()
     {
        
-
         //Cursor.lockState = CursorLockMode.Locked;
 
-        StartCoroutine(captureImage());
+        //StartCoroutine(captureImage());
 
         bool lee = DTMain.readFromFile();
         Debug.Log(lee);
@@ -71,9 +70,7 @@ public class GameManager : MonoBehaviour
                 tpPoints.Add(new Vector3(DTMain.returnValOfList(i)._x, DTMain.returnValOfList(i)._y, DTMain.returnValOfList(i)._z));
             }
             Debug.Log(tpPoints.Count);
-        }
-        
-        
+        }       
     }
     private void Update()
     {
@@ -129,7 +126,7 @@ public class GameManager : MonoBehaviour
         return tpPoints[index];
     }
 
-    public System.Collections.IEnumerator captureImage()
+    public System.Collections.IEnumerator captureImage(int index)
     {
         yield return new WaitForEndOfFrame();
 
@@ -159,6 +156,14 @@ public class GameManager : MonoBehaviour
 
 
         // Enviar a la DLL
-        DTMain.captureScreen(pngData, pngData.Length, filtros);
+        DTMain.captureScreen(pngData, pngData.Length, filtros, index);
+    }
+
+    public System.Collections.IEnumerator CaptureAfterTeleport(int k)
+    {
+        // Esperar al siguiente frame completo
+        yield return null;
+        yield return new WaitForEndOfFrame(); 
+        yield return StartCoroutine(GameManager.instance.captureImage(k));
     }
 }

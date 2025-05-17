@@ -131,7 +131,7 @@ public class player_controller : MonoBehaviour
             Debug.Log(transform.position.x+"\n"+transform.position.y +"\n"+ transform.position.z);
             Debug.Log(DTMain.listSize());
 
-            StartCoroutine(GameManager.instance.captureImage());
+            StartCoroutine(GameManager.instance.captureImage(GameManager.instance.getTPList().Count));
         }
 
         if (tepeado)
@@ -145,6 +145,7 @@ public class player_controller : MonoBehaviour
             GetComponent<CharacterController>().enabled = false;
             transform.position = GameManager.instance.getTPpoint(k);
             Debug.Log("Tepea a: " + transform.position);
+            StartCoroutine(GameManager.instance.CaptureAfterTeleport(k));
 
             if (k + 1 < GameManager.instance.getTPList().Count)
             {
@@ -157,6 +158,7 @@ public class player_controller : MonoBehaviour
             }
             tepeado = true;
             GetComponent<CharacterController>().enabled = true;
+
         }
 
     }

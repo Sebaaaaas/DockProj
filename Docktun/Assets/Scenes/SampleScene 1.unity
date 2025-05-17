@@ -892,12 +892,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorblindnessFilters: {fileID: 0}
   gravedadDalt: 1
-  Protanopia: 0
+  Protanopia: 1
   Protanomalia: 0
   Deuteranopia: 0
   Deuteranomalia: 0
-  Tritanopia: 0
-  Tritanomalia: 1
+  Tritanopia: 1
+  Tritanomalia: 0
   Acromatopia: 0
   Acromatomalia: 0
 --- !u!114 &126791038
@@ -8784,7 +8784,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 531749752}
   m_LocalRotation: {x: 0.4096597, y: -0.2682373, z: 0.12739614, w: 0.8625532}
-  m_LocalPosition: {x: -6.26, y: 18.9, z: 12.46}
+  m_LocalPosition: {x: -6.2599983, y: 18.899998, z: 12.460001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -16219,11 +16219,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa7155796051b734daa718462081dc5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_BindingMode: 1
+  m_BindingMode: 4
   m_FollowOffset: {x: 6, y: 11, z: -7}
-  m_XDamping: 1
-  m_YDamping: 1
-  m_ZDamping: 1
+  m_XDamping: 0
+  m_YDamping: 0
+  m_ZDamping: 0
   m_AngularDampingMode: 0
   m_PitchDamping: 0
   m_YawDamping: 0
@@ -16846,8 +16846,8 @@ MonoBehaviour:
   m_UpdateMethod: 1
   m_BlendUpdateMethod: 1
   m_DefaultBlend:
-    m_Style: 1
-    m_Time: 0.5
+    m_Style: 0
+    m_Time: 0
     m_CustomCurve:
       serializedVersion: 2
       m_Curve: []
