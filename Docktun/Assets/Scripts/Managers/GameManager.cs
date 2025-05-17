@@ -95,6 +95,7 @@ public class GameManager : MonoBehaviour
         Tracker.TrackEvent(new GameStateEvent(GameStateEvent.EventType.GameEnd, GameStateEvent.ResultType.Quit));
         Tracker.TrackEvent(new SessionEvent(SessionEvent.EventType.SessionEnd));
         Tracker.Closing();
+
         DTMain.writeToFile();
     }
 
@@ -119,6 +120,16 @@ public class GameManager : MonoBehaviour
     public List<Vector3> getTPList()
     {
         return tpPoints;
+    }
+
+    public void addToList(Vector3 posit)
+    {
+        tpPoints.Add(posit);
+    }
+
+    public void clearList()
+    {
+        tpPoints.Clear();
     }
 
     public Vector3 getTPpoint(int index)

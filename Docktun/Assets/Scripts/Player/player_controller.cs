@@ -45,7 +45,7 @@ public class player_controller : MonoBehaviour
 
     int k = 0;
 
-    bool tepeado=false;
+  
     
 
     void Start()
@@ -130,41 +130,45 @@ public class player_controller : MonoBehaviour
             Debug.Log("Pos creada");
             Debug.Log(transform.position.x+"\n"+transform.position.y +"\n"+ transform.position.z);
             Debug.Log(DTMain.listSize());
+            GameManager.instance.addToList(transform.position);
 
             StartCoroutine(GameManager.instance.captureImage(GameManager.instance.getTPList().Count));
         }
 
-        if (tepeado)
-        {
-            Debug.Log("Estoy en: " + transform.position);
-            tepeado = false;
-        }
+       
 
         if (Input.GetKeyDown(KeyCode.O))
         {
-            GetComponent<CharacterController>().enabled = false;
-            transform.position = GameManager.instance.getTPpoint(k);
-            Debug.Log("Tepea a: " + transform.position);
-            StartCoroutine(GameManager.instance.CaptureAfterTeleport(k));
-
-            if (k + 1 < GameManager.instance.getTPList().Count)
+            if (GameManager.instance.getTPList().Count > 0)
             {
+                GetComponent<CharacterController>().enabled = false;
+                transform.position = GameManager.instance.getTPpoint(k);
+                Debug.Log("Tepea a: " + transform.position);
+                StartCoroutine(GameManager.instance.CaptureAfterTeleport(k));
 
-                k++;
+                if (k + 1 < GameManager.instance.getTPList().Count)
+                {
+
+                    k++;
+                }
+                else
+                {
+                    k = 0;
+                }
+
+                GetComponent<CharacterController>().enabled = true;
             }
-            else
-            {
-                k = 0;
-            }
-            tepeado = true;
-            GetComponent<CharacterController>().enabled = true;
 
         }
 
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            DTMain.ClearList();
+            GameManager.instance.clearList();
+        }
     }
 
    
-
     private void turn(Vector3 direction)
     {       
         if (direction != Vector3.zero)
