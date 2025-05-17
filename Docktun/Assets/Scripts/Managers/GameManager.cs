@@ -71,17 +71,6 @@ public class GameManager : MonoBehaviour
             Debug.Log(tpPoints.Count);
         }       
     }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            RenderTexture screenTexture = new RenderTexture(Screen.width, Screen.height, 0);
-            ScreenCapture.CaptureScreenshotIntoRenderTexture(screenTexture);
-            DTMain.SetColorBlindnessComputeShaders();
-            for (int i = 0; i < 8; i++) DTMain.ProcessImageOnGPU(screenTexture, i);
-            Debug.Log("GPU");
-        }
-    }
 
     public void OnPlayerDeath()
     {
@@ -151,6 +140,7 @@ public class GameManager : MonoBehaviour
         byte[] pngData = tex.EncodeToPNG();
         Destroy(tex); // liberar memoria
 
+
         //decidir que filtros se van a usar
         Dictionary<string, bool> filtros = new()
         {
@@ -164,9 +154,12 @@ public class GameManager : MonoBehaviour
             { "Acromatomalia", this.Acromatomalia }
         };
 
+        RenderTexture screenTexture = new RenderTexture(Screen.width, Screen.height, 0);
+        ScreenCapture.CaptureScreenshotIntoRenderTexture(screenTexture);
 
         // Enviar a la DLL
-        DTMain.captureScreen(pngData, pngData.Length, filtros, index);
+        DTMain.GenerateImages(pngData, filtros, index);
+        //DTMain.GenerateImages(pngData, filtros, index, screenTexture);
     }
 
     public System.Collections.IEnumerator CaptureAfterTeleport(int k)
