@@ -891,12 +891,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorblindnessFilters: {fileID: 0}
-  Protanopia: 1
+  gravedadDalt: 1
+  Protanopia: 0
   Protanomalia: 0
-  Deuteranopia: 1
+  Deuteranopia: 0
   Deuteranomalia: 0
   Tritanopia: 0
-  Tritanomalia: 0
+  Tritanomalia: 1
   Acromatopia: 0
   Acromatomalia: 0
 --- !u!114 &126791038
