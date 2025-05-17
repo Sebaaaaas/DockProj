@@ -15,7 +15,6 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     private List<Vector3> tpPoints = new List<Vector3>();
-    public ComputeShader colorblindnessFilters;
 
     public float gravedadDalt = 1;
 
@@ -78,7 +77,7 @@ public class GameManager : MonoBehaviour
         {
             RenderTexture screenTexture = new RenderTexture(Screen.width, Screen.height, 0);
             ScreenCapture.CaptureScreenshotIntoRenderTexture(screenTexture);
-            DTMain.SetColorBlindnessComputeShaders(colorblindnessFilters);
+            DTMain.SetColorBlindnessComputeShaders();
             for (int i = 0; i < 8; i++) DTMain.ProcessImageOnGPU(screenTexture, i);
             Debug.Log("GPU");
         }
