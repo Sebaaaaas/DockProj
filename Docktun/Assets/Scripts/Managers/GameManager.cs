@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
 
     public float gravedadDalt = 1;
 
+    public string Carpeta_Destino = "Default";
 
     [Header("Filtros de daltonismo")]
     public bool Protanopia;
@@ -158,7 +159,7 @@ public class GameManager : MonoBehaviour
         ScreenCapture.CaptureScreenshotIntoRenderTexture(screenTexture);
 
         // Enviar a la DLL
-        DTMain.GenerateImages(pngData, filtros, index);
+        DTMain.GenerateImages(pngData, filtros, index, Carpeta_Destino);
         //DTMain.GenerateImages(pngData, filtros, index, screenTexture);
     }
 
