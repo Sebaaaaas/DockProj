@@ -160,7 +160,7 @@ public class GameManager : MonoBehaviour
 
         // Enviar a la DLL
         DTMain.GenerateImages(pngData, filtros, index, Carpeta_Destino);
-        //DTMain.GenerateImages(pngData, filtros, index, screenTexture);
+        //DTMain.GenerateImages(pngData, filtros, index, Carpeta_Destino, screenTexture);
     }
 
     public System.Collections.IEnumerator CaptureAfterTeleport(int k)
