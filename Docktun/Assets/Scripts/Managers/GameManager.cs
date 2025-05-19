@@ -1,10 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
-using System.Runtime.InteropServices;
 using TelemetriaDOC;
 using DaltonismoHWHAP;
 
@@ -16,22 +12,23 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     private List<Vector3> tpPoints = new List<Vector3>();
 
-    public float gravedadDalt = 1;
-
     public string Carpeta_Destino = "Default";
+
+
+    [Header("True para usar GPU en lugar de CPU")]
+    public bool GPU;
 
     [Header("Filtros de daltonismo")]
     public bool Protanopia;
-    public bool Protanomalia;
     public bool Deuteranopia;
-    public bool Deuteranomalia;
     public bool Tritanopia;
-    public bool Tritanomalia;
-    public bool Acromatopia;
-    public bool Acromatomalia;
+    public bool Acromatopsia;
 
+    // Siguiente posicion de la lista a visitar
+    int k = 0;
 
-
+    // Para cambiar la posicion del jugador
+    Transform playerTransform;
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -50,7 +47,7 @@ public class GameManager : MonoBehaviour
         Tracker.TrackEvent(new SessionEvent(SessionEvent.EventType.SessionStart));
         Tracker.TrackEvent(new GameStateEvent(GameStateEvent.EventType.GameStart, GameStateEvent.ResultType.Sucess));
 
-        DTMain.Init(gravedadDalt);
+        DTMain.Init();
     }
     
     void Start()
@@ -58,11 +55,15 @@ public class GameManager : MonoBehaviour
        
         //Cursor.lockState = CursorLockMode.Locked;
 
-        //StartCoroutine(captureImage());
+        // Comprobamos si existe un el archivo de posiciones
+        bool fileExists = DTMain.readFromFile();
 
-        bool lee = DTMain.readFromFile();
-        Debug.Log(lee);
-        if (lee)
+        Debug.Log(fileExists);
+
+        playerTransform = PlayerManager.instance.player.transform;
+
+        // Si existe el archivo, copiamos las posiciones a una lista de lugares a los que queremos hacer un teleport al jugador/camaraa
+        if (fileExists)
         {
             int tam = DTMain.listSize();
             for (int i = 0; i < tam; i++)
@@ -71,6 +72,53 @@ public class GameManager : MonoBehaviour
             }
             Debug.Log(tpPoints.Count);
         }       
+    }
+
+    private void Update()
+    {
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            DTMain.addPos(playerTransform.position.x, playerTransform.position.y, playerTransform.position.z);
+            Debug.Log("Pos creada");
+            Debug.Log(playerTransform.position.x + "\n" + playerTransform.position.y + "\n" + playerTransform.position.z);
+            Debug.Log(DTMain.listSize());
+            instance.addToList(playerTransform.position);
+
+            StartCoroutine(instance.captureImage(instance.getTPList().Count));
+        }
+
+
+
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            if (instance.getTPList().Count > 0)
+            {
+                playerTransform.gameObject.GetComponent<CharacterController>().enabled = false;
+                playerTransform.position = instance.getTPpoint(k);
+
+                StartCoroutine(instance.captureImage(k));
+
+                if (k + 1 < instance.getTPList().Count)
+                {
+                    k++;
+                }
+                else
+                {
+                    k = 0;
+                }
+
+                playerTransform.gameObject.GetComponent<CharacterController>().enabled = true;
+            }
+
+        }
+
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            DTMain.ClearList();
+            instance.clearList();
+            k = 0;
+        }
     }
 
     public void OnPlayerDeath()
@@ -119,6 +167,7 @@ public class GameManager : MonoBehaviour
     public void clearList()
     {
         tpPoints.Clear();
+        Debug.Log("Position list cleared");
     }
 
     public Vector3 getTPpoint(int index)
@@ -146,28 +195,20 @@ public class GameManager : MonoBehaviour
         Dictionary<string, bool> filtros = new()
         {
             { "Protanopia", this.Protanopia },
-            { "Protanomalia", this.Protanomalia },
             { "Deuteranopia", this.Deuteranopia },
-            { "Deuteranomalia", this.Deuteranomalia },
             { "Tritanopia", this.Tritanopia },
-            { "Tritanomalia", this.Tritanomalia },
-            { "Acromatopia", this.Acromatopia },
-            { "Acromatomalia", this.Acromatomalia }
+            { "Acromatopia", this.Acromatopsia }
         };
 
         RenderTexture screenTexture = new RenderTexture(Screen.width, Screen.height, 0);
         ScreenCapture.CaptureScreenshotIntoRenderTexture(screenTexture);
 
         // Enviar a la DLL
-        DTMain.GenerateImages(pngData, filtros, index, Carpeta_Destino);
-        //DTMain.GenerateImages(pngData, filtros, index, Carpeta_Destino, screenTexture);
+
+        if (!GPU)        
+            DTMain.GenerateImages(pngData, filtros, index, Carpeta_Destino);
+        else
+            DTMain.GenerateImages(pngData, filtros, index, Carpeta_Destino, screenTexture);
     }
 
-    public System.Collections.IEnumerator CaptureAfterTeleport(int k)
-    {
-        // Esperar al siguiente frame completo
-        yield return null;
-        yield return new WaitForEndOfFrame(); 
-        yield return StartCoroutine(GameManager.instance.captureImage(k));
-    }
 }

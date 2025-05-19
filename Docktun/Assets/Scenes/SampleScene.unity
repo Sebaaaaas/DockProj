@@ -890,7 +890,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6864651d82bb5148966cc15688ef0d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colorblindnessFilters: {fileID: 7200000, guid: 197e9e8ae3b91714088cb44e480ddd58, type: 3}
+  Carpeta_Destino: Default
+  Protanopia: 1
+  Deuteranopia: 0
+  Tritanopia: 1
+  Acromatopsia: 0
 --- !u!114 &126791038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15724,9 +15728,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_BindingMode: 1
   m_FollowOffset: {x: 6, y: 11, z: -7}
-  m_XDamping: 1
-  m_YDamping: 1
-  m_ZDamping: 1
+  m_XDamping: 0
+  m_YDamping: 0
+  m_ZDamping: 0
   m_AngularDampingMode: 0
   m_PitchDamping: 0
   m_YawDamping: 0

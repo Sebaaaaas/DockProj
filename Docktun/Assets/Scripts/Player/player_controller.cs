@@ -38,16 +38,6 @@ public class player_controller : MonoBehaviour
 
     BoxCollider swordAreaCollider; // Its on the player mesh right now
 
-    float timetosend = 3;
-    float timepassed = 0;
-    int timesSended = 0;
-    bool closed = false;
-
-    int k = 0;
-
-  
-    
-
     void Start()
     {        
         character_controller = GetComponent<CharacterController>();
@@ -124,49 +114,6 @@ public class player_controller : MonoBehaviour
         if (!performingInstantAction)
             move(direction);
 
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            DTMain.addPos(transform.position.x, transform.position.y, transform.position.z);
-            Debug.Log("Pos creada");
-            Debug.Log(transform.position.x+"\n"+transform.position.y +"\n"+ transform.position.z);
-            Debug.Log(DTMain.listSize());
-            GameManager.instance.addToList(transform.position);
-
-            StartCoroutine(GameManager.instance.captureImage(GameManager.instance.getTPList().Count));
-        }
-
-       
-
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            if (GameManager.instance.getTPList().Count > 0)
-            {
-                GetComponent<CharacterController>().enabled = false;
-                transform.position = GameManager.instance.getTPpoint(k);
-                Debug.Log("Tepea a: " + transform.position);
-                StartCoroutine(GameManager.instance.CaptureAfterTeleport(k));
-
-                if (k + 1 < GameManager.instance.getTPList().Count)
-                {
-
-                    k++;
-                }
-                else
-                {
-                    k = 0;
-                }
-
-                GetComponent<CharacterController>().enabled = true;
-            }
-
-        }
-
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            DTMain.ClearList();
-            GameManager.instance.clearList();
-            k = 0;
-        }
     }
 
    
