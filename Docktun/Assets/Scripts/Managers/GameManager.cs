@@ -200,15 +200,17 @@ public class GameManager : MonoBehaviour
             { "Acromatopia", this.Acromatopsia }
         };
 
-        RenderTexture screenTexture = new RenderTexture(Screen.width, Screen.height, 0);
-        ScreenCapture.CaptureScreenshotIntoRenderTexture(screenTexture);
-
         // Enviar a la DLL
 
         if (!GPU)        
             DTMain.GenerateImages(pngData, filtros, index, Carpeta_Destino);
         else
+        {
+            RenderTexture screenTexture = new RenderTexture(Screen.width, Screen.height, 0);
+            ScreenCapture.CaptureScreenshotIntoRenderTexture(screenTexture);
             DTMain.GenerateImages(pngData, filtros, index, Carpeta_Destino, screenTexture);
+        }
+            
     }
 
 }
