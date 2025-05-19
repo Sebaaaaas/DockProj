@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
         //Cursor.lockState = CursorLockMode.Locked;
 
         // Comprobamos si existe un el archivo de posiciones
-        bool fileExists = DTMain.readFromFile();
+        bool fileExists = DTMain.ReadFromFile();
 
         Debug.Log(fileExists);
 
@@ -65,10 +65,10 @@ public class GameManager : MonoBehaviour
         // Si existe el archivo, copiamos las posiciones a una lista de lugares a los que queremos hacer un teleport al jugador/camaraa
         if (fileExists)
         {
-            int tam = DTMain.listSize();
+            int tam = DTMain.ListSize();
             for (int i = 0; i < tam; i++)
             {
-                tpPoints.Add(new Vector3(DTMain.returnValOfList(i)._x, DTMain.returnValOfList(i)._y, DTMain.returnValOfList(i)._z));
+                tpPoints.Add(new Vector3(DTMain.ReturnValOfList(i)._x, DTMain.ReturnValOfList(i)._y, DTMain.ReturnValOfList(i)._z));
             }
             Debug.Log(tpPoints.Count);
         }       
@@ -79,10 +79,10 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.P))
         {
-            DTMain.addPos(playerTransform.position.x, playerTransform.position.y, playerTransform.position.z);
+            DTMain.AddPos(playerTransform.position.x, playerTransform.position.y, playerTransform.position.z);
             Debug.Log("Pos creada");
             Debug.Log(playerTransform.position.x + "\n" + playerTransform.position.y + "\n" + playerTransform.position.z);
-            Debug.Log(DTMain.listSize());
+            Debug.Log(DTMain.ListSize());
             instance.addToList(playerTransform.position);
 
             StartCoroutine(instance.captureImage(instance.getTPList().Count));
@@ -133,7 +133,7 @@ public class GameManager : MonoBehaviour
         Tracker.TrackEvent(new SessionEvent(SessionEvent.EventType.SessionEnd));
         Tracker.Closing();
 
-        DTMain.writeToFile();
+        DTMain.WriteToFile();
     }
 
     private void OnEnable()
@@ -197,7 +197,7 @@ public class GameManager : MonoBehaviour
             { "Protanopia", this.Protanopia },
             { "Deuteranopia", this.Deuteranopia },
             { "Tritanopia", this.Tritanopia },
-            { "Acromatopia", this.Acromatopsia }
+            { "Acromatopsia", this.Acromatopsia }
         };
 
         // Enviar a la DLL
