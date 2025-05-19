@@ -10,7 +10,7 @@ int2 SourceTextureSize;
 // 0: Protanopia
 // 1: Deuteranopia
 // 2: Tritanopia
-// 3: Acromatopia
+// 3: Acromatopsia
 int type = 0;
 
 [numthreads(8, 8, 1)]
@@ -47,7 +47,7 @@ void CSFiltrosDaltonismo(uint3 id : SV_DispatchThreadID)
             -0.179, 0.148, 0.304
             );
     }
-    else if (type == 3) { // Acromatopia
+    else if (type == 3) { // Acromatopsia
         filterMatrix = float3x3(
             0.299, 0.299, 0.299,
             0.587, 0.587, 0.587,
