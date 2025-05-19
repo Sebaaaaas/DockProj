@@ -1,9 +1,6 @@
 [
-{"eventType": "SessionStart", "sessionID":"f2c3fb2b-451c-4195-8f53-038b10cc17ce", "gameID":"0", "timestamp":1747673390933},
-{"eventType": "GameStart", "sessionID":"f2c3fb2b-451c-4195-8f53-038b10cc17ce", "gameID":"0", "timestamp":1747673390934},
-{"eventType": "Puzzle1StartEvent", "sessionID":"f2c3fb2b-451c-4195-8f53-038b10cc17ce", "gameID":"0", "timestamp":1747673391504},
-{"eventType": "FireActivatedEvent", "sessionID":"f2c3fb2b-451c-4195-8f53-038b10cc17ce", "gameID":"0", "timestamp":1747673460708},
-{"eventType": "FireActivatedEvent", "sessionID":"f2c3fb2b-451c-4195-8f53-038b10cc17ce", "gameID":"0", "timestamp":1747673477404},
-{"eventType": "GameEnd", "sessionID":"f2c3fb2b-451c-4195-8f53-038b10cc17ce", "gameID":"0", "timestamp":1747673532257, "RESULT": "QUIT"},
-{"eventType": "SessionEnd", "sessionID":"f2c3fb2b-451c-4195-8f53-038b10cc17ce", "gameID":"0", "timestamp":1747673532257}
+{"eventType": "SessionStart", "sessionID":"2793c439-efb7-4491-87c2-1bb3d026edfa", "gameID":"0", "timestamp":1747676206363},
+{"eventType": "GameStart", "sessionID":"2793c439-efb7-4491-87c2-1bb3d026edfa", "gameID":"0", "timestamp":1747676206365},
+{"eventType": "GameEnd", "sessionID":"2793c439-efb7-4491-87c2-1bb3d026edfa", "gameID":"0", "timestamp":1747676353816, "RESULT": "QUIT"},
+{"eventType": "SessionEnd", "sessionID":"2793c439-efb7-4491-87c2-1bb3d026edfa", "gameID":"0", "timestamp":1747676353816}
 ]
